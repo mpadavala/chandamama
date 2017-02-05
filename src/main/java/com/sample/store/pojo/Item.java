@@ -1,9 +1,9 @@
-package com.sample.hub.pojo;
+package com.sample.store.pojo;
 
 import java.util.Set;
 
-import com.sample.hub.enums.ItemState;
-import com.sample.hub.enums.Size;
+import com.sample.store.enums.ItemState;
+import com.sample.store.enums.Size;
 
 public class Item {
 

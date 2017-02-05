@@ -1,4 +1,4 @@
-package com.sample.hub.pojo;
+package com.sample.store.pojo;
 
 public class Price {
 	

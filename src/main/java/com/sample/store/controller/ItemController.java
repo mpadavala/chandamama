@@ -1,4 +1,4 @@
-package com.sample.hub.controller;
+package com.sample.store.controller;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.hub.dao.ItemDao;
-import com.sample.hub.enums.ItemState;
-import com.sample.hub.pojo.Category;
-import com.sample.hub.pojo.Item;
-import com.sample.hub.pojo.Price;
+import com.sample.store.dao.ItemDao;
+import com.sample.store.enums.ItemState;
+import com.sample.store.pojo.Category;
+import com.sample.store.pojo.Item;
+import com.sample.store.pojo.Price;
 
 
 @RestController

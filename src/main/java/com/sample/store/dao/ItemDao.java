@@ -1,4 +1,4 @@
-package com.sample.hub.dao;
+package com.sample.store.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +14,8 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sample.hub.pojo.Item;
-import com.sample.hub.pojo.Price;
+import com.sample.store.pojo.Item;
+import com.sample.store.pojo.Price;
 
 @Repository
 public class ItemDao {

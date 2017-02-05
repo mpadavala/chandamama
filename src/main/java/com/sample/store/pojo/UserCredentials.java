@@ -1,6 +1,6 @@
-package com.sample.hub.pojo;
+package com.sample.store.pojo;
 
-import com.sample.hub.util.HashingUtil;
+import com.sample.store.util.HashingUtil;
 
 public class UserCredentials {
 

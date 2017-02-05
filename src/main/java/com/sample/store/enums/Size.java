@@ -1,4 +1,4 @@
-package com.sample.hub.enums;
+package com.sample.store.enums;
 
 public enum Size {
 	

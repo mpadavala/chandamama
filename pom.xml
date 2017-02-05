@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sample</groupId>
-	<artifactId>hub</artifactId>
+	<artifactId>store</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hub Maven Webapp</name>
+	<name>Store Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -198,6 +198,6 @@
 	</repositories>
 
 	<build>
-		<finalName>hub</finalName>
+		<finalName>store</finalName>
 	</build>
 </project>

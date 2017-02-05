@@ -1,4 +1,4 @@
-package com.sample.hub;
+package com.sample.store;
 
 public class SamplePojo {
 
