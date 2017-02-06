@@ -1,4 +1,4 @@
-package com.sample.store.pojo;
+package com.sample.finance.dto;
 
 public class SamplePojo {
 

@@ -1,4 +1,4 @@
-package com.sample.store.controller;
+package com.sample.finance.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.store.pojo.SamplePojo;
+import com.sample.finance.dto.SamplePojo;
 
 @RestController
 @RequestMapping("/hi")
