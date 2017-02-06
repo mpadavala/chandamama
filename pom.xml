@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sample</groupId>
-	<artifactId>store</artifactId>
+	<artifactId>myfinance</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Store Webapp</name>
+	<name>MyFinance Application</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -198,7 +198,7 @@
 	</repositories>
 	
 	<build>
-		<finalName>store</finalName>
+		<finalName>myfinance</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
