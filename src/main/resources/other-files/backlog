@@ -1,0 +1,96 @@
+
+TODO:
+=====
+
+service for Gains from Certain Date
+service for loosers from certain date
+service for potential under valued stocks
+
+Add marketcap for sectors service 
+Add marketcap for sub-sectors service 
+
+Add a service for MarketCap by SECTORS
+Add a service for MarketCap by SUB-SECTORS
+
+gainers in a particular sector
+loosers in a particular sector
+
+gainers in a particular subsector
+loosers in a particular subsector
+
+money movement among sectors
+money movement among subsectors in a given sector
+
+Add Loader logs to a seperate Log File
+Program to analyze the logs and find which tickers are invalid and mark them not to use
+
+findout a service to fetch the tickers periodically
+
+maintain the list of S&P stocks & do the sector,subsector, marketcap analysi on them also
+maintain the list of DOW stocks & do the sector,subsector, marketcap analysi on them also
+
+mark the tickers that are not active anymore
+
+wakeup system to run crontab - from sleep/hibernate etc..
+
+unit tests for all the scenarios
+
+fix jdbctemplate and autowiring
+jdbc ds log - https://code.google.com/p/jdbcdslog/
+create runnable jar from command line
+
+
+gold and precious metals api
+
+country and GDP's API - http://data.worldbank.org/node/18
+http://data.worldbank.org/developers/api-overview?print&book_recurse
+
+Google APi - like maps,
+Twitter API
+Facebook API
+
+IBM Watson API - http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/
+
+Program to parse the pdf file or any other file for the information
+
+
+UI:
+===
+- Design and create a UI 
+
+Done:
+====
+Tickers Loader
+StockData Loader
+Market Gainers service
+Market Loosers service
+service to fetch the list of sectors
+service to fetch the list of subsectors
+service for marketcap by date
+
+
+TODO:
+=====
+
+- add logger
+- fix Load tickers service
+- findout a service to fetch the tickers periodically
+- Enable constraints for tickers and the other tables
+- StockDetailsDAO parsing date properly
+- gainers and loosers service with custom dates and marketcap and other params
+- service for Gains from Certain Date
+- service for loosers from certain date
+- service for potential under valued stocks
+- service for MarketCap by SECTORS
+- adding connection pool
+
+UI:
+===
+- add UI with jqgrid/dataTable
+
+TO SELL
+=======
+DVR
+old Camera
+old lens
+

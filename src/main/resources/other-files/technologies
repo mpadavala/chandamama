@@ -1,0 +1,152 @@
+"If You Want To Go Fast, Go Alone. If You Want To Go Far, Go Together"
+ - African proverb.
+
+
+Java
+Java 7, 8 New Features
+Restful Webservices - Updates, Deletes, Authentication, etc..
+OAuth2 - http://blog.cloudfoundry.org/2012/10/09/oauth-rest/
+**Spring
+Spring - MVC	
+Hibernate
+Collections Framework
+Http Aysnc calls
+Annotations
+Logging - CommonsLogging, SLF4J,, Log4J, 
+JDBC
+Connection pools
+Servlets
+Async Http
+JMX
+Caching Solutions
+Memcached
+SSL - Secure Socket Layer
+SSO - Single Sign On
+Design Patterns
+Design Problems
+Algorithms & Analysis
+Regular Expressions
+LRU caches
+Mysql
+Linux
+LAMP
+Lucene
+Solr
+Crawling packages
+Rules Engine
+Statistics
+WorkFlow Engines - and list of softwares available
+jBPMworkflow engine – this cartridge is able to generate process definitions and handlers from UML 
+Outer Joins and Inner Joins   
+http://stackoverflow.com/questions/38549/difference-between-inner-and-outer-joins
+http://en.wikipedia.org/wiki/Java_Transaction_API
+EJB & EJB3
+http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services
+http://en.wikipedia.org/wiki/Java_Message_Service
+Servlet 3.1
+
+
+BigData
+Hadoop
+Pig
+Hive
+Cassandra
+Mongo
+MMS, Backup
+Redis
+Data Ingestion Technologies:
+Apache Kafka 
+Apache Flume
+Storm
+http://zookeeper.apache.org/
+
+Languages
+R
+activity graphs
+Python
+Scala
+Groovy
+Go
+Ruby
+Perl
+node.js
+Php
+
+Editors
+vi
+vim
+emacs
+
+Other Tools
+Git
+
+Build Technologies
+Maven
+Graddle
+Git
+Puppet - http://en.wikipedia.org/wiki/Puppet_%28software%29
+Chef
+Configuration Management Tools
+Continuous Integration
+Jenkins
+Cloud
+Amazon AWS
+Cloud Computing Software
+
+Monitoring
+Java Monitoring and Diagnostic Tools
+Java Melody
+Graphite
+Load Testing
+Jmeter
+Performance
+Visual VM
+Thread Monitoring
+Process Management
+Properties Management and updating
+
+Testing
+Junit
+EasyMock
+Mockitto
+
+UI Technologies (Front End)
+HTML5 - WebSockets, New Features
+Javascript Tools
+JQuery	
+Android Development
+V8 Javascript engine
+Dart - Google Web language to replace JavaScript
+
+
+App Servers
+tomcat
+Jetty
+Jboss
+WebLogic
+
+Google Products
+Google Car
+Google Finance
+Google Drive
+Google Word, Excel, Power Point, 
+
+
+
+Other Softwares to get familar with
+
+SAP
+Oracle Apps
+https://developer.chrome.com/native-client/overview
+
+Aurdino
+Raspberry Pi
+
+Chrome Web Tools
+FireFox - Firebug and web tools
+
+http://tech.pro/blog/1885/top-10-programming-languages-to-learn-in-2014
+
+http://research.google.com/pubs/NaturalLanguageProcessing.html
+
+
