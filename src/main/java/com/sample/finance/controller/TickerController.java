@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.finance.dao.TickerDao;
+import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.Sector;
 import com.sample.finance.dto.SubSector;
 import com.sample.finance.dto.Ticker;
-import com.sample.finance.fileimport.ImportTickers;
+import com.sample.finance.fileimport.TickersLoader;
 
 @RestController
 @RequestMapping("tickers")
@@ -22,39 +22,39 @@ public class TickerController {
 	private static final Logger logger = Logger.getLogger(TickerController.class.getName());
 	
 	@Autowired
-	private TickerDao tickerDao;
+	private TickersDao tickersDao;
 
-	public void setTickerDao(TickerDao tickerDao) {
-		this.tickerDao = tickerDao;
+	public void setTickerDao(TickersDao tickersDao) {
+		this.tickersDao = tickersDao;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, produces="application/json")
 	public List<Ticker> getTickers() throws Exception{
 		logger.info("In gettickers ");
-		return tickerDao.getAllTickers();
+		return tickersDao.getAllTickers();
 	}
 	
 	@RequestMapping(value="/{ticker}", method = RequestMethod.GET, produces="application/json")
 	public Ticker getTicker(@PathVariable String ticker) throws Exception{
-		return tickerDao.getTicker(ticker.trim());
+		return tickersDao.getTicker(ticker.trim());
 	}
 	
 	@RequestMapping(value="/sectors", method = RequestMethod.GET, produces="application/json")
 	public List<Sector> getSectors() throws Exception{
-		return tickerDao.getSectors();
+		return tickersDao.getSectors();
 	}
 	
 	
 	@RequestMapping(value="/subsectors", method = RequestMethod.GET, produces="application/json")
 	public List<SubSector> getSubsectors() throws Exception{
-		return tickerDao.getSubsectors();
+		return tickersDao.getSubsectors();
 	}
 	@RequestMapping(value="/load", method = RequestMethod.GET, produces="application/json")
 	public void loadTickers(){
 		int numberOfLinesToSkip = 1;
 		String baseFolderPath  = "/Users/muralipadavala/dev/fileinterface/tickers";
-		ImportTickers importTickers = new ImportTickers();
-		importTickers.setTickerDao(tickerDao);
+		TickersLoader importTickers = new TickersLoader();
+		importTickers.setTickerDao(tickersDao);
 		importTickers.load(numberOfLinesToSkip, baseFolderPath);
 	}
 	

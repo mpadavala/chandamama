@@ -12,7 +12,7 @@
 		<property name="password" value="password" />
 	</bean>
 	
-	<bean id="tickerDao" class="com.sample.finance.dao.TickerDao">
+	<bean id="tickersDao" class="com.sample.finance.dao.TickersDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 

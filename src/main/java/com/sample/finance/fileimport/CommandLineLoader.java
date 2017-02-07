@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sample.finance.dao.StockDao;
-import com.sample.finance.dao.TickerDao;
+import com.sample.finance.dao.TickersDao;
 
 public class CommandLineLoader {
 
@@ -40,8 +40,8 @@ public class CommandLineLoader {
 	private static void loadTickers(String rootPathOfTickers){
 		// *****DONT CHANGE HOW THE XML is REFERENCED BELOW.. IT WORKS FOR RUNNING AS RUNNABLE JAR*******
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
-		TickerDao dao = (TickerDao) context.getBean("tickerDao");
-		ImportTickers csvFileLoader = new ImportTickers();
+		TickersDao dao = (TickersDao) context.getBean("tickerDao");
+		TickersLoader csvFileLoader = new TickersLoader();
 		csvFileLoader.setTickerDao(dao);
 		csvFileLoader.load(1, rootPathOfTickers);
 	}
@@ -53,7 +53,7 @@ public class CommandLineLoader {
 	private static void loadStocks(){
 		// *****DONT CHANGE HOW THE XML is REFERENCED BELOW.. IT WORKS FOR RUNNING AS RUNNABLE JAR*******
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
-		TickerDao tickerdao = (TickerDao) context.getBean("tickerDao");
+		TickersDao tickerdao = (TickersDao) context.getBean("tickerDao");
 		StockDao stockdao = (StockDao) context.getBean("stockDataDao");
 		
 		StockDataLoader loader = new StockDataLoader();

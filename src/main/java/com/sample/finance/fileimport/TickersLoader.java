@@ -15,21 +15,21 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sample.finance.dao.TickerDao;
+import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.Ticker;
 import com.sample.finance.util.Constants;
 
-public class ImportTickers {
+public class TickersLoader {
 	
-	private static final Logger logger = Logger.getLogger(ImportTickers.class.getName());
+	private static final Logger logger = Logger.getLogger(TickersLoader.class.getName());
 	
 	private static final String CSV_FILE_SUFFX = ".csv";
 	private static final String COUNTRY_USA = "USA";
 	
 	@Autowired
-	private TickerDao tickerDao;
+	private TickersDao tickerDao;
 
-	public void setTickerDao(TickerDao tickerDao) {
+	public void setTickerDao(TickersDao tickerDao) {
 		this.tickerDao = tickerDao;
 	}
 	
@@ -56,7 +56,6 @@ public class ImportTickers {
 					if(file.toString().endsWith(CSV_FILE_SUFFX)){
 						InputStream instream = new FileInputStream(file);
 						InputStreamReader reader=new InputStreamReader(instream,Charset.forName("UTF-8"));
-			
 						CSVParser parser=new CSVParser(reader,CSVFormat.DEFAULT);
 						List<CSVRecord> csvRecords = parser.getRecords();
 						if(csvRecords != null){

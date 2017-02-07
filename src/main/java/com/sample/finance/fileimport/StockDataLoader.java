@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sample.finance.dao.StockDao;
-import com.sample.finance.dao.TickerDao;
+import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.Stock;
 import com.sample.finance.dto.Ticker;
 
@@ -15,12 +15,12 @@ public class StockDataLoader {
 	private static Logger logger = Logger.getLogger(StockDataLoader.class.getName());
 
 	@Autowired
-	private TickerDao tickerDao;
+	private TickersDao tickerDao;
 	@Autowired
 	private StockDao stockDataDao;
 	
 
-	public void setTickerDao(TickerDao tickerDao) {
+	public void setTickerDao(TickersDao tickerDao) {
 		this.tickerDao = tickerDao;
 	}
 	
