@@ -55,7 +55,7 @@ public class StockDao {
 	private static final String EPS = "EPS";
 	private static final String PE = "PE";
 	private static final String COMPANYNAME = "COMPANYNAME";
-	private static final String CREATION_DATE = "CREATION_DATE";
+	private static final String CREATIONDATE = "CREATIONDATE";
 	
 	@SuppressWarnings("unused")
 	private DataSource dataSource;	
@@ -148,7 +148,7 @@ public class StockDao {
 			stock.setEPS(resultSet.getDouble(EPS));
 			stock.setPE(resultSet.getDouble(PE));
 			stock.setCompanyName(resultSet.getString(COMPANYNAME));
-			stock.setCreationDate(resultSet.getDate(CREATION_DATE));
+			stock.setCreationDate(resultSet.getDate(CREATIONDATE));
 			
 			return stock;
 		}

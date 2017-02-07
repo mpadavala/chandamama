@@ -118,8 +118,8 @@ public class TickersDao extends BaseDao{
 			ticker.setSector(resultSet.getString("SECTOR"));
 			ticker.setIndustry(resultSet.getString("INDUSTRY"));
 			ticker.setSummaryUrl(resultSet.getString("SUMMARYURL"));
-			ticker.setCreationDate(resultSet.getDate("CREATION_DATE"));
-			ticker.setModifiedDate(resultSet.getDate("MODIFIED_DATE"));
+			ticker.setCreationDate(resultSet.getDate("CREATIONDATE"));
+			ticker.setModifiedDate(resultSet.getDate("MODIFIEDDATE"));
 			return ticker;
 		}
 	}

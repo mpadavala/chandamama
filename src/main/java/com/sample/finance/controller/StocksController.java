@@ -19,7 +19,7 @@ import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.MarketCap;
 import com.sample.finance.dto.Stock;
 import com.sample.finance.dto.Ticker;
-import com.sample.finance.fileimport.StockDataLoader;
+import com.sample.finance.fileimport.StocksDataLoader;
 import com.sample.finance.util.Constants;
 import com.sample.finance.util.StockUtil;
 
@@ -116,7 +116,8 @@ public class StocksController{
 			try {
 				List<Ticker> tickers = tickersDao.getAllTickers();
 				logger.info("Getting Details from Yahoo!!!");
-				List<Stock> stocksData = StockDataLoader.getStockDetailsFromYahoo(tickers);
+				StocksDataLoader stocksDataLoader = new StocksDataLoader();
+				List<Stock> stocksData = stocksDataLoader.getStockDetailsFromYahoo(tickers);
 				
 				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
 				

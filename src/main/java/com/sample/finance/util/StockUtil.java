@@ -23,7 +23,7 @@ public class StockUtil {
 			}
 			return Double.valueOf(str);
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
