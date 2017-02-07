@@ -35,11 +35,12 @@ public class StockUtil {
 			if(str.equalsIgnoreCase(Constants.NA)){
 				return Double.MIN_VALUE;
 			}
+			
 			if(str.endsWith(Constants.K)){
 				str = str.replaceAll(Constants.K, Constants.EMPTY_STRING);
 				value = Double.valueOf(str) * Constants.THOUSAND;
 			}
-			if(str.endsWith(Constants.M)){
+			else if(str.endsWith(Constants.M)){
 				str = str.replaceAll(Constants.M, Constants.EMPTY_STRING);
 				value = Double.valueOf(str) * Constants.MILLION;
 			}
@@ -67,7 +68,7 @@ public class StockUtil {
 		String firstToken = null;
 		String secondToken = null;
 		try {
-			if(str.equalsIgnoreCase(Constants.NA_NA)){
+			if(str.contains(Constants.NA)){
 				return Double.MIN_VALUE;
 			}
 			StringTokenizer st = new StringTokenizer(str, Constants.HYPHEN);
