@@ -35,7 +35,6 @@ public class StocksController{
 	
 	@Autowired
 	private TickersDao tickersDao;
-	
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
 	public @ResponseBody List<Stock> getMarketGainers(@RequestParam("marketcap") String marketCap, 
@@ -43,7 +42,6 @@ public class StocksController{
 			@RequestParam("orderby") String orderByColumn,
 			@RequestParam(value="date", required = false)  @DateTimeFormat(pattern=Constants.DATE_FORMAT_DEFAULT) Date date,
 			@RequestParam(value = "limit", required = false) Integer limit, HttpServletRequest request) {
-		
 		try{
 			long marketCapLong = (long)StockUtil.stringToDouble_KMBT(marketCap);
 			long totalVolumeLong = (long)StockUtil.stringToDouble_KMBT(totalVolume);
@@ -72,7 +70,6 @@ public class StocksController{
 			@RequestParam("orderby") String orderByColumn,
 			@RequestParam(value="date", required = false)  @DateTimeFormat(pattern=Constants.DATE_FORMAT_DEFAULT) Date date,
 			@RequestParam(value = "limit", required = false) Integer limit, HttpServletRequest request){
-		
 		try{
 			long marketCapLong = (long)StockUtil.stringToDouble_KMBT(marketCap);
 			long totalVolumeLong = (long)StockUtil.stringToDouble_KMBT(totalVolume);
@@ -97,7 +94,6 @@ public class StocksController{
 	
 	@RequestMapping(value="/marketcap", method = RequestMethod.GET,  produces="application/json")
 	public List<MarketCap> getMarketCapByDate(@RequestParam(value = "limit", required = false) Integer limit){
-		
 		try{
 			if(limit == null){
 				limit = DEFAULT_LIMIT;
@@ -111,30 +107,14 @@ public class StocksController{
 	
 	@RequestMapping(value="/load", method = RequestMethod.GET,  produces="application/json")
 		public void loadStockData() {
-		
 			logger.info("Starting Stock Data Load");
 			try {
 				List<Ticker> tickers = tickersDao.getAllTickers();
 				logger.info("Getting Details from Yahoo!!!");
 				StocksDataLoader stocksDataLoader = new StocksDataLoader();
 				List<Stock> stocksData = stocksDataLoader.getStockData(tickers);
-				
 				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
-				
 				stocksDataDao.insertStockData(stocksData);
-				
-				//TODO:: to get the list of failed inserts and do a report based on that.
-				/*
-				System.out.println("Number of Successful Inserts : " + result.getSuccessfulInserts());
-				System.out.println("Number of Failed Inserts : " + result.getFailedInserts().size());
-				System.out.println(result.getFailedInsertsList());
-				 */
-				// TODO:
-				// WatchList.getHtml(StockDAO.getTopGainers(new Date()));
-				// WatchList.getHtml(StockDAO.getTopLoosers(new Date()));
-				  
-				 
-				 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
