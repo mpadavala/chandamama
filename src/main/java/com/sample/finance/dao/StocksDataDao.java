@@ -33,7 +33,7 @@ public class StocksDataDao extends BaseDao{
 	private static String MARKET_GAINERS = "SELECT * FROM STOCK_DATA WHERE DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS > 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?;";	
 	private static String MARKET_LOOSERS = "SELECT * FROM STOCK_DATA WHERE DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS < 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?";
 	private static String MAKETCAP_BY_DATE = "SELECT CREATIONDATE, SUM(MARKETCAP) FROM STOCK_DATA GROUP BY CREATIONDATE ORDER BY CREATIONDATE DESC LIMIT ?";
-	
+	private static String NUMBER_OF_STOCKS_BY_DATE = "SELECT COUNT(1) FROM STOCK_DATA GROUP BY CREATIONDATE HAVING DATE_FORMAT(CREATIONDATE, '%m-%d-%Y') = ?";
 	
 	private static final String TICKER = "TICKER";
 	private static final String LASTTRADE = "LASTTRADE";
@@ -98,6 +98,8 @@ public class StocksDataDao extends BaseDao{
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(entry.getKey());
 			marketCap.setDayOftheWeek(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(marketCap.getDate().getTime()));
+			int numberOfStocksConsidered =  getJdbcTemplate().queryForInt(NUMBER_OF_STOCKS_BY_DATE, new Object[]{new SimpleDateFormat(Constants.DATE_FORMAT_DEFAULT).format(marketCap.getDate())});
+			marketCap.setNumberOfStocksConsidered(numberOfStocksConsidered);
 			marketCapList.add(marketCap);
 		}
 		return marketCapList;

@@ -7,6 +7,7 @@ public class MarketCap {
 	private Date date;
 	private Double totalMarketCap;
 	private String totalMarketCapHumanReadable;
+	private int numberOfStocksConsidered;
 	private String dayOftheWeek;
 	
 	public Date getDate() {
@@ -27,6 +28,12 @@ public class MarketCap {
 	public void setTotalMarketCapHumanReadable(String totalMarketCapHumanReadable) {
 		this.totalMarketCapHumanReadable = totalMarketCapHumanReadable;
 	}
+	public int getNumberOfStocksConsidered() {
+		return numberOfStocksConsidered;
+	}
+	public void setNumberOfStocksConsidered(int numberOfStocksConsidered) {
+		this.numberOfStocksConsidered = numberOfStocksConsidered;
+	}
 	public String getDayOftheWeek() {
 		return dayOftheWeek;
 	}
@@ -37,6 +44,10 @@ public class MarketCap {
 	@Override
 	public String toString() {
 		return "MarketCap [date=" + date + ", totalMarketCap=" + totalMarketCap + ", totalMarketCapHumanReadable="
-				+ totalMarketCapHumanReadable + ", dayOftheWeek=" + dayOftheWeek + "]";
+				+ totalMarketCapHumanReadable + ", numberOfStocksConsidered=" + numberOfStocksConsidered
+				+ ", dayOftheWeek=" + dayOftheWeek + "]";
 	}
+	
+	
+	
 }
