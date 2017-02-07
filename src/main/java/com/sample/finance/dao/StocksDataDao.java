@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Logger;
@@ -31,7 +32,7 @@ public class StocksDataDao extends BaseDao{
 	private static String INSERT_STOCK_DATA = "INSERT INTO STOCK_DATA VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static String MARKET_GAINERS = "SELECT * FROM STOCK_DATA WHERE DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS > 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?;";	
 	private static String MARKET_LOOSERS = "SELECT * FROM STOCK_DATA WHERE DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS < 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?";
-	private static String MAKETCAP_BY_DATE = "SELECT TRADEDATE, SUM(MARKETCAP) FROM STOCK_DATA GROUP BY TRADEDATE ORDER BY TRADEDATE DESC LIMIT ?";
+	private static String MAKETCAP_BY_DATE = "SELECT CREATIONDATE, SUM(MARKETCAP) FROM STOCK_DATA GROUP BY CREATIONDATE ORDER BY CREATIONDATE DESC LIMIT ?";
 	
 	
 	private static final String TICKER = "TICKER";
@@ -96,8 +97,7 @@ public class StocksDataDao extends BaseDao{
 			
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(entry.getKey());
-			marketCap.setDayOftheWeek(calendar.get(Calendar.DAY_OF_WEEK));
-			
+			marketCap.setDayOftheWeek(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(marketCap.getDate().getTime()));
 			marketCapList.add(marketCap);
 		}
 		return marketCapList;

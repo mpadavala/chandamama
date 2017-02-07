@@ -28,7 +28,7 @@ import com.sample.finance.util.StockUtil;
 public class StocksController{
 	
 	private static final Logger logger = Logger.getLogger(StocksController.class.getName());
-	private static final int DEFAULT_LIMIT=20;
+	private static final int DEFAULT_LIMIT=10;
 	
 	@Autowired
 	private StocksDataDao stocksDataDao;
