@@ -22,7 +22,7 @@ import com.sample.finance.util.Constants;
 public class WatchListDao {
 
 	
-	private static final Logger logger = Logger.getLogger(StockDao.class.getName());
+	private static final Logger logger = Logger.getLogger(StocksDataDao.class.getName());
 	
 	private static String INSERT_WATCHLIST = "INSERT INTO WATCHLIST VALUES(?,?,?)";
 	private static String UPDATE_WATCHLIST = "UPDATE WATCHLIST SET COUNT=COUNT+1 WHERE TICKER = ? AND DATE_FORMAT(CREATIONDATE, '%m-%d-%Y') = DATE_FORMAT(?, '%m-%d-%Y')";

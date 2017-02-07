@@ -1,4 +1,4 @@
-package com.sample.finance.dao;
+package com.sample.finance.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,8 +13,7 @@ public class DBConnection {
 	public static Connection getConnection() throws Exception{
 		
 		Connection connection = null;
-		try { // DriverManager.registerDriver(new OracleDriver());
-
+		try { 
 			String driverName = "com.mysql.jdbc.Driver";
 			Class.forName(driverName);
 			connection = DriverManager.getConnection(MYSQL_CON_STR);

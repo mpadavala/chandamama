@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.finance.dao.StockDao;
+import com.sample.finance.dao.StocksDataDao;
 import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.MarketCap;
 import com.sample.finance.dto.Stock;
@@ -31,7 +31,7 @@ public class StocksController{
 	private static final int DEFAULT_LIMIT=20;
 	
 	@Autowired
-	private StockDao stockDataDao;
+	private StocksDataDao stocksDataDao;
 	
 	@Autowired
 	private TickersDao tickersDao;
@@ -59,7 +59,7 @@ public class StocksController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong + 
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 			
-			return stockDataDao.getMaketGainers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
+			return stocksDataDao.getMaketGainers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -87,7 +87,7 @@ public class StocksController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong +
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 
-			return stockDataDao.getMarketLoosers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
+			return stocksDataDao.getMarketLoosers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -102,7 +102,7 @@ public class StocksController{
 			if(limit == null){
 				limit = DEFAULT_LIMIT;
 			}
-			return stockDataDao.getMarketCapByDate(limit);
+			return stocksDataDao.getMarketCapByDate(limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -121,7 +121,7 @@ public class StocksController{
 				
 				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
 				
-				stockDataDao.insertStockData(stocksData);
+				stocksDataDao.insertStockData(stocksData);
 				
 				//TODO:: to get the list of failed inserts and do a report based on that.
 				/*

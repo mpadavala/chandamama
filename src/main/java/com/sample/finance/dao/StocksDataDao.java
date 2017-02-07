@@ -14,11 +14,6 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Logger;
 
-import javax.sql.DataSource;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
@@ -29,9 +24,9 @@ import com.sample.finance.util.Constants;
 import com.sample.finance.util.StockUtil;
 
 @Component
-public class StockDao {
+public class StocksDataDao extends BaseDao{
 
-	private static final Logger logger = Logger.getLogger(StockDao.class.getName());
+	private static final Logger logger = Logger.getLogger(StocksDataDao.class.getName());
 	
 	private static String INSERT_STOCK_DATA = "INSERT INTO STOCK_DATA VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static String MARKET_GAINERS = "SELECT * FROM STOCK_DATA WHERE DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS > 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?;";	
@@ -56,27 +51,7 @@ public class StockDao {
 	private static final String PE = "PE";
 	private static final String COMPANYNAME = "COMPANYNAME";
 	private static final String CREATIONDATE = "CREATIONDATE";
-	
-	@SuppressWarnings("unused")
-	private DataSource dataSource;	
-	private JdbcTemplate jdbcTemplate;
 
-	
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-	
-
-	public JdbcTemplate getJdbcTemplate() {
-		
-		if(jdbcTemplate == null){
-			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-			DataSource ds = (DataSource) context.getBean("dataSource");
-			setDataSource(ds);
-		}
-		return jdbcTemplate;
-	}
 	
 	public List<Stock> getMaketGainers(Date date, long marketCap, long totalvolume, String orderByColumn, String sortOrder, int howmany)throws Exception{
 		SimpleDateFormat sdf = new SimpleDateFormat(Constants.DATE_FORMAT_DEFAULT);
