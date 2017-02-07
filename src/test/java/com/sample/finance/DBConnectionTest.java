@@ -1,11 +1,11 @@
-package com.sample.finance.util;
+package com.sample.finance;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class DBConnection {
+public class DBConnectionTest {
 
 
 	private static final String MYSQL_CON_STR = "jdbc:mysql://localhost:3306/finance?user=root&password=password";

@@ -14,12 +14,20 @@ public class StockUtil {
 	private static DateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
 	private static DateFormat timeFormatter = new SimpleDateFormat("MM/dd/yyyyh:mma");
 	
+	public static DateFormat getTimeFormatter() {
+		return timeFormatter;
+	}
+	
+	public static DateFormat getDateFormatter() {
+		return dateFormatter;
+	}
+	
 	public static double stringToDouble(String str){
 
-		double value = Double.MIN_VALUE;
+		double value = 0;
 		try {
 			if(str.equalsIgnoreCase(Constants.NA)){
-				return Double.MIN_VALUE;
+				return value;
 			}
 			return Double.valueOf(str);
 		} catch (NumberFormatException e) {
@@ -33,10 +41,9 @@ public class StockUtil {
 		double value = 0;
 		try {
 			if(str.equalsIgnoreCase(Constants.NA)){
-				return Double.MIN_VALUE;
+				value = 0;;
 			}
-			
-			if(str.endsWith(Constants.K)){
+			else if(str.endsWith(Constants.K)){
 				str = str.replaceAll(Constants.K, Constants.EMPTY_STRING);
 				value = Double.valueOf(str) * Constants.THOUSAND;
 			}
@@ -69,7 +76,7 @@ public class StockUtil {
 		String secondToken = null;
 		try {
 			if(str.contains(Constants.NA)){
-				return Double.MIN_VALUE;
+				return value;
 			}
 			StringTokenizer st = new StringTokenizer(str, Constants.HYPHEN);
 			firstToken = st.nextToken();
@@ -107,9 +114,6 @@ public class StockUtil {
 		} 
 	}
 	
-
-
-	
 	public static Date StringToDate(String str){
 
 		Date date = null;
@@ -142,31 +146,17 @@ public class StockUtil {
         return value+"";
     }
 	
-	private static String format(double value){
-		DecimalFormat decimalFormat = new DecimalFormat(DECIMAL_PATTERN);
-		return decimalFormat.format(value);
-	}
-	
-	
-	
-	public static DateFormat getTimeFormatter() {
-		return timeFormatter;
-	}
-	public static DateFormat getDateFormatter() {
-		return dateFormatter;
-	}
 	/**
 	 * As of now  below characters are defined as Special Characters
 	 * 	1. Single Quotes 
 	 *  2. Double Quotes
 	 */
-
-	
 	public static String removeSpecialCharacters(String line){
 		line = line.replace(Constants.DOUBLE_QUOTE, Constants.EMPTY_STRING);
 		line = line.replace(Constants.SINGLE_QUOTE, Constants.EMPTY_STRING);
 		return line;
 	}
+	
 	/**
 	 * replace N/A  with 0 (Zero) else return the double value of String
 	 * @param str
@@ -193,11 +183,11 @@ public class StockUtil {
 			if(str.equalsIgnoreCase(Constants.NA)){
 				return value;
 			}
-			if(str.endsWith(Constants.K)){
+			else if(str.endsWith(Constants.K)){
 				str = str.replaceAll(Constants.K, Constants.EMPTY_STRING);
 				value = Double.valueOf(str) * Constants.THOUSAND;
 			}
-			if(str.endsWith(Constants.M)){
+			else if(str.endsWith(Constants.M)){
 				str = str.replaceAll(Constants.M, Constants.EMPTY_STRING);
 				value = Double.valueOf(str) * Constants.MILLION;
 			}
@@ -215,8 +205,6 @@ public class StockUtil {
 			return value;
 		} 
 	}
-	
-	
 	
 	public static double stringToDouble_NA_NA(String str, int index){
 		
@@ -244,11 +232,6 @@ public class StockUtil {
 		} 
 	}
 	
-
-	
-	
-	
-	
 	public static Date getTradeTimeStamp(String str, String time){
 		
 		Date date = null;
@@ -272,6 +255,9 @@ public class StockUtil {
 		return date;
 	}
 	
-	
+	private static String format(double value){
+		DecimalFormat decimalFormat = new DecimalFormat(DECIMAL_PATTERN);
+		return decimalFormat.format(value);
+	}
 	
 }
