@@ -117,7 +117,7 @@ public class StocksController{
 				List<Ticker> tickers = tickersDao.getAllTickers();
 				logger.info("Getting Details from Yahoo!!!");
 				StocksDataLoader stocksDataLoader = new StocksDataLoader();
-				List<Stock> stocksData = stocksDataLoader.getStockDetailsFromYahoo(tickers);
+				List<Stock> stocksData = stocksDataLoader.getStockData(tickers);
 				
 				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
 				

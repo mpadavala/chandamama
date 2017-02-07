@@ -56,7 +56,7 @@ public class StockUtil {
 			return value;
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -82,7 +82,7 @@ public class StockUtil {
 			return value;
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -101,7 +101,7 @@ public class StockUtil {
 			return value;
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -121,7 +121,7 @@ public class StockUtil {
 			DateFormat dateFormatter = new SimpleDateFormat(Constants.DATE_FORMAT_COMING_FROM_DATAPROVIDER_FOR_STOCKDATA);
 			date = dateFormatter.parse(str);	
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return date;
 		}
 		return date;
@@ -180,7 +180,7 @@ public class StockUtil {
 			}
 			return Double.valueOf(str);
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -210,7 +210,7 @@ public class StockUtil {
 			return value;
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -238,7 +238,7 @@ public class StockUtil {
 			return value;
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return value;
 		} 
 	}
@@ -264,7 +264,7 @@ public class StockUtil {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return date;
 		}
 		

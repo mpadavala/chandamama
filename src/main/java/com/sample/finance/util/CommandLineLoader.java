@@ -1,10 +1,11 @@
-package com.sample.finance.fileimport;
+package com.sample.finance.util;
 
 import java.util.logging.Logger;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sample.finance.dao.TickersDao;
+import com.sample.finance.fileimport.TickersLoader;
 
 public class CommandLineLoader {
 

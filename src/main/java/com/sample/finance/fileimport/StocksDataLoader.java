@@ -27,9 +27,8 @@ public class StocksDataLoader {
 	private static final int NUMBER_OF_STOCKS_PER_REQUEST = 100;
 	
 	
-	public List<Stock> getStockDetailsFromYahoo(List<Ticker>tickers){
+	public List<Stock> getStockData(List<Ticker>tickers){
 		//http://quote.yahoo.com/d/quotes.csv?s=C,ebay,java,tivo&d=t&f=sl1d1t1c1ohgvj1pp2wern
-		
 		
 		List<String> commaSeperatedTickers = getCommaSeperatedTickers(tickers);
 		List<Stock> stockDetails = new ArrayList<Stock>();
@@ -48,10 +47,8 @@ public class StocksDataLoader {
 					
 					if(csvRecords != null){
 						for(CSVRecord record : csvRecords){
-
+							logger.info(record.toString());
 							Stock stock = new Stock();
-							
-							
 							try {
 								stock.setTicker(record.get(0));
 								stock.setLastTrade(StockUtil.stringToDouble(record.get(1)));
