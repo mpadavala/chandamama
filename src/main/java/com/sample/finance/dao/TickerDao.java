@@ -25,8 +25,8 @@ public class TickerDao {
 	private static final Logger logger = Logger.getLogger(TickerDao.class.getName());
 	
 	//private static final String GET_ETF_TICKERS = "SELECT TICKER FROM ETF_TICKERS";
-	private static final String INSERT_TICKER = "INSERT INTO TICKERS (TICKER, COUNTRY, NAME, IPOYEAR, SECTOR, INDUSTRY, SUMMARYURL, CREATION_DATE, MODIFIED_DATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	private static final String UPDATE_TICKER = "UPDATE TICKERS SET NAME=?, IPOYEAR=? , SECTOR=?, INDUSTRY=?, MODIFIED_DATE=? WHERE TICKER = ?";
+	private static final String INSERT_TICKER = "INSERT INTO TICKERS (TICKER, COUNTRY, NAME, IPOYEAR, SECTOR, INDUSTRY, SUMMARYURL, CREATIONDATE, MODIFIEDDATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private static final String UPDATE_TICKER = "UPDATE TICKERS SET NAME=?, IPOYEAR=? , SECTOR=?, INDUSTRY=?, MODIFIEDDATE=? WHERE TICKER = ?";
 	private static final String GET_ALL_TICKERS = "SELECT * FROM TICKERS";
 	private static final String GET_TICKER_BY_ID = "SELECT * FROM TICKERS WHERE TICKER=?";
 	private static final String GET_SECTORS = "SELECT Sector, COUNT(*) Count FROM TICKERS GROUP BY SECTOR ORDER BY COUNT(*) DESC;";

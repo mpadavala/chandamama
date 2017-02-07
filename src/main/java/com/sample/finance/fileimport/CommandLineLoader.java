@@ -1,4 +1,4 @@
-package com.sample.finance.batch;
+package com.sample.finance.fileimport;
 
 import java.util.logging.Logger;
 
@@ -41,7 +41,7 @@ public class CommandLineLoader {
 		// *****DONT CHANGE HOW THE XML is REFERENCED BELOW.. IT WORKS FOR RUNNING AS RUNNABLE JAR*******
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
 		TickerDao dao = (TickerDao) context.getBean("tickerDao");
-		TickerFileLoader csvFileLoader = new TickerFileLoader();
+		ImportTickers csvFileLoader = new ImportTickers();
 		csvFileLoader.setTickerDao(dao);
 		csvFileLoader.load(1, rootPathOfTickers);
 	}

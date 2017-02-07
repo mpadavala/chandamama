@@ -1,5 +1,5 @@
 
-package com.sample.finance.batch;
+package com.sample.finance.fileimport;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,9 +19,9 @@ import com.sample.finance.dao.TickerDao;
 import com.sample.finance.dto.Ticker;
 import com.sample.finance.util.Constants;
 
-public class TickerFileLoader {
+public class ImportTickers {
 	
-	private static final Logger logger = Logger.getLogger(TickerFileLoader.class.getName());
+	private static final Logger logger = Logger.getLogger(ImportTickers.class.getName());
 	
 	private static final String CSV_FILE_SUFFX = ".csv";
 	private static final String COUNTRY_USA = "USA";
@@ -65,6 +65,8 @@ public class TickerFileLoader {
 									continue;
 								}
 								String tickerSymbol = record.get(0).trim();
+								
+								
 								if(tickerSymbol.contains("^")){
 									continue;
 								}
@@ -76,6 +78,7 @@ public class TickerFileLoader {
 								ticker.setTicker(tickerSymbol);
 								ticker.setCountry(COUNTRY_USA);
 								ticker.setCompanyName(record.get(1));
+								
 								ticker.setIpoYear(getIpoYear(record.get(4)));
 								ticker.setSector(record.get(5));
 								ticker.setIndustry(record.get(6));

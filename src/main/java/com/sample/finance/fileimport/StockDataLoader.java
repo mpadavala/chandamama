@@ -1,4 +1,4 @@
-package com.sample.finance.batch;
+package com.sample.finance.fileimport;
 
 import java.util.List;
 import java.util.logging.Logger;

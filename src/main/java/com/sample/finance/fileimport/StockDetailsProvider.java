@@ -1,4 +1,4 @@
-package com.sample.finance.batch;
+package com.sample.finance.fileimport;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
