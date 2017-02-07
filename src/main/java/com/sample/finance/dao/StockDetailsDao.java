@@ -11,11 +11,17 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.sql.DataSource;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import com.sample.finance.dto.Stock;
 import com.sample.finance.dto.StockDetailsResult;
 import com.sample.finance.util.StockUtil;
 
-public class StockDetailsDao {
+public class StockDetailsDao extends BaseDao{
 
 	private static final String GET_TICKERS = "SELECT TICKER FROM TICKERS";
 	private static final String GET_STOCK_DETAILS = "SELECT * FROM STOCK_DETAILS_STR";
@@ -46,6 +52,7 @@ public class StockDetailsDao {
 	private static final String PE = "PE";
 	private static final String COMAPNYNAME = "COMAPNYNAME";
 	private static final String CREATION_DATE = "CREATION_DATE";
+	
 	
 	public static List<Stock> getMaketGainers(Date date, long marketCap, long totalvolume, String orderByColumn, String sortOrder, int howmany)throws Exception{
 		return getFromDB(MAKET_GAINERS, date, marketCap, totalvolume, orderByColumn, sortOrder, howmany);

@@ -20,9 +20,9 @@ import com.sample.finance.dto.Stock;
 import com.sample.finance.dto.Ticker;
 import com.sample.finance.util.StockUtil;
 
-public class StockDataProvider {
+public class StockDataLoader {
 
-	private static Logger logger = Logger.getLogger(StockDataProvider.class.getName());
+	private static Logger logger = Logger.getLogger(StockDataLoader.class.getName());
 	
 	private static final String FIRST_URL = "http://quote.yahoo.com/d/quotes.csv?s=";
 	private static final String END_URL = "&d=t&f=sl1d1c1ohgvj1pp2wern";
