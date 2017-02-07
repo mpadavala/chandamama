@@ -4,7 +4,6 @@ import java.util.logging.Logger;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.sample.finance.dao.StockDao;
 import com.sample.finance.dao.TickersDao;
 
 public class CommandLineLoader {
@@ -21,7 +20,7 @@ public class CommandLineLoader {
 		}
 		
 		if(args[0].equalsIgnoreCase("stocks")){
-			loadStocks();
+			//loadStocks();
 		}else if(args[0].equalsIgnoreCase("tickers")){
 			String rootPathOfTickers = null;
 			if(args.length == 2){
@@ -50,6 +49,7 @@ public class CommandLineLoader {
 	/***
 	 * DONT CHANGE THE MAIN METHOD and HOW XML is LOADED - USED FOR RUNNING JAR
 	 *  */
+	/*
 	private static void loadStocks(){
 		// *****DONT CHANGE HOW THE XML is REFERENCED BELOW.. IT WORKS FOR RUNNING AS RUNNABLE JAR*******
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
@@ -62,6 +62,8 @@ public class CommandLineLoader {
 		loader.setStockDataDao(stockdao);
 		loader.load();
 	}
+	
+	*/
 	
 	private static void invalidArguments(){
 		logger.info("Invalid Arguments : Usage below");

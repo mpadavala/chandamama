@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.finance.dao.StockDao;
+import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.MarketCap;
 import com.sample.finance.dto.Stock;
+import com.sample.finance.dto.Ticker;
+import com.sample.finance.fileimport.StockDataProvider;
 import com.sample.finance.util.Constants;
 import com.sample.finance.util.StockUtil;
 
@@ -27,14 +30,12 @@ public class StocksController{
 	private static final Logger logger = Logger.getLogger(StocksController.class.getName());
 	private static final int DEFAULT_LIMIT=20;
 	
-	
-	
 	@Autowired
 	private StockDao stockDataDao;
-
-	public void setStockDataDao(StockDao stockDataDao) {
-		this.stockDataDao = stockDataDao;
-	}
+	
+	@Autowired
+	private TickersDao tickersDao;
+	
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
 	public @ResponseBody List<Stock> getMarketGainers(@RequestParam("marketcap") String marketCap, 
@@ -107,5 +108,36 @@ public class StocksController{
 			return null;
 		}
 	}
+	
+	@RequestMapping(value="/load", method = RequestMethod.GET,  produces="application/json")
+		public void loadStockData() {
+		
+			logger.info("Starting Stock Data Load");
+			try {
+				List<Ticker> tickers = tickersDao.getAllTickers();
+				logger.info("Getting Details from Yahoo!!!");
+				List<Stock> stocksData = StockDataProvider.getStockDetailsFromYahoo(tickers);
+				
+				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
+				
+				stockDataDao.insertStockData(stocksData);
+				
+				//TODO:: to get the list of failed inserts and do a report based on that.
+				/*
+				System.out.println("Number of Successful Inserts : " + result.getSuccessfulInserts());
+				System.out.println("Number of Failed Inserts : " + result.getFailedInserts().size());
+				System.out.println(result.getFailedInsertsList());
+				 */
+				// TODO:
+				// WatchList.getHtml(StockDAO.getTopGainers(new Date()));
+				// WatchList.getHtml(StockDAO.getTopLoosers(new Date()));
+				  
+				 
+				 
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
 	
 }
