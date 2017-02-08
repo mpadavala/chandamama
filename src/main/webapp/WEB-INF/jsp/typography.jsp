@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +13,16 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Social Buttons CSS -->
-    <link href="../vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.htm">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -253,7 +251,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.htm"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -277,46 +275,46 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.htm"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="flot.htm">Flot Charts</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.htm">Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.htm"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.htm"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="panels-wells.htm">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="buttons.htm">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="notifications.htm">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="typography.html">Typography</a>
+                                    <a href="typography.htm">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Icons</a>
+                                    <a href="icons.htm"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Grid</a>
+                                    <a href="grid.htm">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -355,10 +353,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.htm">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="login.htm">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -370,212 +368,236 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <!-- Page Content -->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Buttons</h1>
+                    <h1 class="page-header">Typography</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Default Buttons
+                            Headings
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <h4>Normal Buttons</h4>
-                            <p>
-                                <button type="button" class="btn btn-default">Default</button>
-                                <button type="button" class="btn btn-primary">Primary</button>
-                                <button type="button" class="btn btn-success">Success</button>
-                                <button type="button" class="btn btn-info">Info</button>
-                                <button type="button" class="btn btn-warning">Warning</button>
-                                <button type="button" class="btn btn-danger">Danger</button>
-                                <button type="button" class="btn btn-link">Link</button>
-                            </p>
-                            <br>
-                            <h4>Disabled Buttons</h4>
-                            <p>
-                                <button type="button" class="btn btn-default disabled">Default</button>
-                                <button type="button" class="btn btn-primary disabled">Primary</button>
-                                <button type="button" class="btn btn-success disabled">Success</button>
-                                <button type="button" class="btn btn-info disabled">Info</button>
-                                <button type="button" class="btn btn-warning disabled">Warning</button>
-                                <button type="button" class="btn btn-danger disabled">Danger</button>
-                                <button type="button" class="btn btn-link disabled">Link</button>
-                            </p>
-                            <br>
-                            <h4>Button Sizes</h4>
-                            <p>
-                                <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                                <button type="button" class="btn btn-primary">Default button</button>
-                                <button type="button" class="btn btn-primary btn-sm">Small button</button>
-                                <button type="button" class="btn btn-primary btn-xs">Mini button</button>
-                                <br>
-                                <br>
-                                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                            </p>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Circle Icon Buttons with Font Awesome Icons
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <h4>Normal Circle Buttons</h4>
-                            <button type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i>
-                            </button>
-                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i>
-                            </button>
-                            <button type="button" class="btn btn-info btn-circle"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i>
-                            </button>
-                            <br>
-                            <br>
-                            <h4>Large Circle Buttons</h4>
-                            <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-circle btn-lg"><i class="fa fa-list"></i>
-                            </button>
-                            <button type="button" class="btn btn-success btn-circle btn-lg"><i class="fa fa-link"></i>
-                            </button>
-                            <button type="button" class="btn btn-info btn-circle btn-lg"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="fa fa-times"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-circle btn-lg"><i class="fa fa-heart"></i>
-                            </button>
-                            <br>
-                            <br>
-                            <h4>Extra Large Circle Buttons</h4>
-                            <button type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-list"></i>
-                            </button>
-                            <button type="button" class="btn btn-success btn-circle btn-xl"><i class="fa fa-link"></i>
-                            </button>
-                            <button type="button" class="btn btn-info btn-circle btn-xl"><i class="fa fa-check"></i>
-                            </button>
-                            <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fa fa-times"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-heart"></i>
-                            </button>
+                            <h1>Heading 1
+                                <small>Sub-heading</small>
+                            </h1>
+                            <h2>Heading 2
+                                <small>Sub-heading</small>
+                            </h2>
+                            <h3>Heading 3
+                                <small>Sub-heading</small>
+                            </h3>
+                            <h4>Heading 4
+                                <small>Sub-heading</small>
+                            </h4>
+                            <h5>Heading 5
+                                <small>Sub-heading</small>
+                            </h5>
+                            <h6>Heading 6
+                                <small>Sub-heading</small>
+                            </h6>
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Outline Buttons with Smooth Transition
+                            Paragraphs
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <h4>Outline Buttons</h4>
+                            <p class="lead">This is an example of lead body copy.</p>
+                            <p>This is an example of standard paragraph text. This is an example of <a href="#">link anchor text</a> within body copy.</p>
                             <p>
-                                <button type="button" class="btn btn-outline btn-default">Default</button>
-                                <button type="button" class="btn btn-outline btn-primary">Primary</button>
-                                <button type="button" class="btn btn-outline btn-success">Success</button>
-                                <button type="button" class="btn btn-outline btn-info">Info</button>
-                                <button type="button" class="btn btn-outline btn-warning">Warning</button>
-                                <button type="button" class="btn btn-outline btn-danger">Danger</button>
-                                <button type="button" class="btn btn-outline btn-link">Link</button>
+                                <small>This is an example of small, fine print text.</small>
+                            </p>
+                            <p>
+                                <strong>This is an example of strong, bold text.</strong>
+                            </p>
+                            <p>
+                                <em>This is an example of emphasized, italic text.</em>
                             </p>
                             <br>
-                            <h4>Outline Button Sizes</h4>
-                            <p>
-                                <button type="button" class="btn btn-outline btn-primary btn-lg">Large button</button>
-                                <button type="button" class="btn btn-outline btn-primary">Default button</button>
-                                <button type="button" class="btn btn-outline btn-primary btn-sm">Small button</button>
-                                <button type="button" class="btn btn-outline btn-primary btn-xs">Mini button</button>
-                                <br>
-                                <br>
-                                <button type="button" class="btn btn-outline btn-primary btn-lg btn-block">Block level button</button>
-                            </p>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Social Buttons with Font Awesome Icons
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <h4>Social Buttons</h4>
-                            <a class="btn btn-block btn-social btn-bitbucket">
-                                <i class="fa fa-bitbucket"></i> Sign in with Bitbucket
-                            </a>
-                            <a class="btn btn-block btn-social btn-dropbox">
-                                <i class="fa fa-dropbox"></i> Sign in with Dropbox
-                            </a>
-                            <a class="btn btn-block btn-social btn-facebook">
-                                <i class="fa fa-facebook"></i> Sign in with Facebook
-                            </a>
-                            <a class="btn btn-block btn-social btn-flickr">
-                                <i class="fa fa-flickr"></i> Sign in with Flickr
-                            </a>
-                            <a class="btn btn-block btn-social btn-github">
-                                <i class="fa fa-github"></i> Sign in with GitHub
-                            </a>
-                            <a class="btn btn-block btn-social btn-google-plus">
-                                <i class="fa fa-google-plus"></i> Sign in with Google
-                            </a>
-                            <a class="btn btn-block btn-social btn-instagram">
-                                <i class="fa fa-instagram"></i> Sign in with Instagram
-                            </a>
-                            <a class="btn btn-block btn-social btn-linkedin">
-                                <i class="fa fa-linkedin"></i> Sign in with LinkedIn
-                            </a>
-                            <a class="btn btn-block btn-social btn-pinterest">
-                                <i class="fa fa-pinterest"></i> Sign in with Pinterest
-                            </a>
-                            <a class="btn btn-block btn-social btn-tumblr">
-                                <i class="fa fa-tumblr"></i> Sign in with Tumblr
-                            </a>
-                            <a class="btn btn-block btn-social btn-twitter">
-                                <i class="fa fa-twitter"></i> Sign in with Twitter
-                            </a>
-                            <a class="btn btn-block btn-social btn-vk">
-                                <i class="fa fa-vk"></i> Sign in with VK
-                            </a>
-
-                            <hr>
-
-                            <div class="text-center">
-                                <a class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a>
-                                <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
-                                <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                                <a class="btn btn-social-icon btn-flickr"><i class="fa fa-flickr"></i></a>
-                                <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
-                                <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-                                <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
-                                <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a class="btn btn-social-icon btn-pinterest"><i class="fa fa-pinterest"></i></a>
-                                <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
-                                <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                                <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
-                            </div>
+                            <h4>Alignment Helpers</h4>
+                            <p class="text-left">Left aligned text.</p>
+                            <p class="text-center">Center aligned text.</p>
+                            <p class="text-right">Right aligned text.</p>
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-6 -->
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Emphasis Classes
+                        </div>
+                        <div class="panel-body">
+                            <p class="text-muted">This is an example of muted text.</p>
+                            <p class="text-primary">This is an example of primary text.</p>
+                            <p class="text-success">This is an example of success text.</p>
+                            <p class="text-info">This is an example of info text.</p>
+                            <p class="text-warning">This is an example of warning text.</p>
+                            <p class="text-danger">This is an example of danger text.</p>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Abbreviations
+                        </div>
+                        <div class="panel-body">
+                            <p>The abbreviation of the word attribute is
+                                <abbr title="attribute">attr</abbr>.</p>
+                            <p>
+                                <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>is an abbreviation for a programming language.</p>
+                            <br>
+                            <h4>Addresses</h4>
+                            <address>
+                                <strong>Twitter, Inc.</strong>
+                                <br>795 Folsom Ave, Suite 600
+                                <br>San Francisco, CA 94107
+                                <br>
+                                <abbr title="Phone">P:</abbr>(123) 456-7890
+                            </address>
+                            <address>
+                                <strong>Full Name</strong>
+                                <br>
+                                <a href="mailto:#">first.last@example.com</a>
+                            </address>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Blockquotes
+                        </div>
+                        <div class="panel-body">
+                            <h4>Default Blockquote</h4>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                            <h4>Blockquote with Citation</h4>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in
+                                    <cite title="Source Title">Source Title</cite>
+                                </small>
+                            </blockquote>
+                            <h4>Right Aligned Blockquote</h4>
+                            <blockquote class="pull-right">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Lists
+                        </div>
+                        <div class="panel-body">
+                            <h4>Unordered List</h4>
+                            <ul>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                                <li>
+                                    <ul>
+                                        <li>List Item</li>
+                                        <li>List Item</li>
+                                        <li>List Item</li>
+                                    </ul>
+                                </li>
+                                <li>List Item</li>
+                            </ul>
+                            <h4>Ordered List</h4>
+                            <ol>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                            </ol>
+                            <h4>Unstyled List</h4>
+                            <ul class="list-unstyled">
+                                <li>List Item</li>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                            </ul>
+                            <h4>Inline List</h4>
+                            <ul class="list-inline">
+                                <li>List Item</li>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Description Lists
+                        </div>
+                        <div class="panel-body">
+                            <dl>
+                                <dt>Standard Description List</dt>
+                                <dd>Description Text</dd>
+                                <dt>Description List Title</dt>
+                                <dd>Description List Text</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Horizontal Description List</dt>
+                                <dd>Description Text</dd>
+                                <dt>Description List Title</dt>
+                                <dd>Description List Text</dd>
+                            </dl>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Code
+                        </div>
+                        <div class="panel-body">
+                            <p>This is an example of an inline code element within body copy. Wrap inline code within a
+                                <code>&lt;code&gt;...&lt;/code&gt;</code>tag.</p>
+                            <pre>This is an example of preformatted text.</pre>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
         </div>
@@ -585,16 +607,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
 
 </body>
 

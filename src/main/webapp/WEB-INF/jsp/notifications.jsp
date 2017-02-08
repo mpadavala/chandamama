@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +13,16 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.htm">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -250,7 +251,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.htm"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -274,46 +275,46 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.htm"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="flot.htm">Flot Charts</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.htm">Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.htm"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.htm"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="panels-wells.htm">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="buttons.htm">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="notifications.htm">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="typography.html">Typography</a>
+                                    <a href="typography.htm">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Icons</a>
+                                    <a href="icons.htm"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Grid</a>
+                                    <a href="grid.htm">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -352,10 +353,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.htm">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="login.htm">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -370,233 +371,143 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Typography</h1>
+                    <h1 class="page-header">Notifications</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Headings
+                            Alert Styles
                         </div>
+                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <h1>Heading 1
-                                <small>Sub-heading</small>
-                            </h1>
-                            <h2>Heading 2
-                                <small>Sub-heading</small>
-                            </h2>
-                            <h3>Heading 3
-                                <small>Sub-heading</small>
-                            </h3>
-                            <h4>Heading 4
-                                <small>Sub-heading</small>
-                            </h4>
-                            <h5>Heading 5
-                                <small>Sub-heading</small>
-                            </h5>
-                            <h6>Heading 6
-                                <small>Sub-heading</small>
-                            </h6>
+                            <div class="alert alert-success">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-info">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-warning">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-danger">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
                         </div>
-                        <!-- /.panel-body -->
+                        <!-- .panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Paragraphs
+                            Dismissable Alerts
                         </div>
+                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <p class="lead">This is an example of lead body copy.</p>
-                            <p>This is an example of standard paragraph text. This is an example of <a href="#">link anchor text</a> within body copy.</p>
-                            <p>
-                                <small>This is an example of small, fine print text.</small>
-                            </p>
-                            <p>
-                                <strong>This is an example of strong, bold text.</strong>
-                            </p>
-                            <p>
-                                <em>This is an example of emphasized, italic text.</em>
-                            </p>
-                            <br>
-                            <h4>Alignment Helpers</h4>
-                            <p class="text-left">Left aligned text.</p>
-                            <p class="text-center">Center aligned text.</p>
-                            <p class="text-right">Right aligned text.</p>
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
                         </div>
-                        <!-- /.panel-body -->
+                        <!-- .panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Emphasis Classes
-                        </div>
-                        <div class="panel-body">
-                            <p class="text-muted">This is an example of muted text.</p>
-                            <p class="text-primary">This is an example of primary text.</p>
-                            <p class="text-success">This is an example of success text.</p>
-                            <p class="text-info">This is an example of info text.</p>
-                            <p class="text-warning">This is an example of warning text.</p>
-                            <p class="text-danger">This is an example of danger text.</p>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-4 -->
+                <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Abbreviations
+                            Modals
                         </div>
+                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <p>The abbreviation of the word attribute is
-                                <abbr title="attribute">attr</abbr>.</p>
-                            <p>
-                                <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>is an abbreviation for a programming language.</p>
+                            <!-- Button trigger modal -->
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Launch Demo Modal
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Tooltips and Popovers
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <h4>Tooltip Demo</h4>
+                            <div class="tooltip-demo">
+                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+                            </div>
                             <br>
-                            <h4>Addresses</h4>
-                            <address>
-                                <strong>Twitter, Inc.</strong>
-                                <br>795 Folsom Ave, Suite 600
-                                <br>San Francisco, CA 94107
-                                <br>
-                                <abbr title="Phone">P:</abbr>(123) 456-7890
-                            </address>
-                            <address>
-                                <strong>Full Name</strong>
-                                <br>
-                                <a href="mailto:#">first.last@example.com</a>
-                            </address>
+                            <h4>Clickable Popover Demo</h4>
+                            <div class="tooltip-demo">
+                                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                    Popover on left
+                                </button>
+                                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                    Popover on top
+                                </button>
+                                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                    Popover on bottom
+                                </button>
+                                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                    Popover on right
+                                </button>
+                            </div>
                         </div>
-                        <!-- /.panel-body -->
+                        <!-- .panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Blockquotes
-                        </div>
-                        <div class="panel-body">
-                            <h4>Default Blockquote</h4>
-                            <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            </blockquote>
-                            <h4>Blockquote with Citation</h4>
-                            <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                <small>Someone famous in
-                                    <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </blockquote>
-                            <h4>Right Aligned Blockquote</h4>
-                            <blockquote class="pull-right">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            </blockquote>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Lists
-                        </div>
-                        <div class="panel-body">
-                            <h4>Unordered List</h4>
-                            <ul>
-                                <li>List Item</li>
-                                <li>List Item</li>
-                                <li>
-                                    <ul>
-                                        <li>List Item</li>
-                                        <li>List Item</li>
-                                        <li>List Item</li>
-                                    </ul>
-                                </li>
-                                <li>List Item</li>
-                            </ul>
-                            <h4>Ordered List</h4>
-                            <ol>
-                                <li>List Item</li>
-                                <li>List Item</li>
-                                <li>List Item</li>
-                            </ol>
-                            <h4>Unstyled List</h4>
-                            <ul class="list-unstyled">
-                                <li>List Item</li>
-                                <li>List Item</li>
-                                <li>List Item</li>
-                            </ul>
-                            <h4>Inline List</h4>
-                            <ul class="list-inline">
-                                <li>List Item</li>
-                                <li>List Item</li>
-                                <li>List Item</li>
-                            </ul>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Description Lists
-                        </div>
-                        <div class="panel-body">
-                            <dl>
-                                <dt>Standard Description List</dt>
-                                <dd>Description Text</dd>
-                                <dt>Description List Title</dt>
-                                <dd>Description List Text</dd>
-                            </dl>
-                            <dl class="dl-horizontal">
-                                <dt>Horizontal Description List</dt>
-                                <dd>Description Text</dd>
-                                <dt>Description List Title</dt>
-                                <dd>Description List Text</dd>
-                            </dl>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Code
-                        </div>
-                        <div class="panel-body">
-                            <p>This is an example of an inline code element within body copy. Wrap inline code within a
-                                <code>&lt;code&gt;...&lt;/code&gt;</code>tag.</p>
-                            <pre>This is an example of preformatted text.</pre>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-4 -->
+                <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
         </div>
@@ -606,16 +517,28 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Notifications - Use for reference -->
+    <script>
+    // tooltip demo
+    $('.tooltip-demo').tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    })
+    // popover demo
+    $("[data-toggle=popover]")
+        .popover()
+    </script>
 
 </body>
 

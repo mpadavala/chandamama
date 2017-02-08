@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +13,19 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="<%=request.getContextPath()%>/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.htm">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -250,7 +254,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.htm"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -266,54 +270,54 @@
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.htm"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="flot.htm">Flot Charts</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.htm">Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.htm"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.htm"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="panels-wells.htm">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="buttons.htm">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="notifications.htm">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="typography.html">Typography</a>
+                                    <a href="typography.htm">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Icons</a>
+                                    <a href="icons.htm"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Grid</a>
+                                    <a href="grid.htm">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -348,14 +352,14 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="active" href="blank.html">Blank Page</a>
+                                    <a href="blank.htm">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="login.htm">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -367,18 +371,112 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Flot</h1>
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Line Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Pie Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Multiple Axes Line Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Moving Line Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-moving"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-bar-chart"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Flot Charts Usage
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks, and interactive features. In SB Admin, we are using the most recent version of Flot along with a few plugins to enhance the user experience. The Flot plugins being used are the tooltip plugin for hoverable tooltips, and the resize plugin for fully responsive charts. The documentation for Flot Charts is available on their website, <a target="_blank" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.</p>
+                            <a target="_blank" class="btn btn-default btn-lg btn-block" href="http://www.flotcharts.org/">View Flot Charts Documentation</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 
@@ -386,16 +484,25 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="<%=request.getContextPath()%>/vendor/flot/excanvas.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.time.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="<%=request.getContextPath()%>/data/flot-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
 
 </body>
 
