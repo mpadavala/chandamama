@@ -2,15 +2,61 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-
+    
 	<definition name="basedefinition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="MPG" /> 
 		<put-attribute name="header-menu" value="/WEB-INF/jsp/header-menu.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
 	</definition>
 	
 	 <definition name="dashboard" extends="basedefinition">  
-        <put-attribute name="title" value="Dash Board" />  
         <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />  
+    </definition> 
+
+ 	<definition name="blank" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/blank.jsp" />  
+    </definition> 
+    
+    <definition name="buttons" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/buttons.jsp" />  
+    </definition> 
+    
+    <definition name="flot" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/flot.jsp" />  
+    </definition> 
+    
+    <definition name="forms" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms.jsp" />  
+    </definition> 
+    
+    <definition name="grid" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/grid.jsp" />  
+    </definition> 
+    
+    <definition name="icons" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/icons.jsp" />  
+    </definition> 
+    
+   
+    
+    <definition name="morris" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/morris.jsp" />  
+    </definition> 
+    
+    <definition name="notifications" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/notifications.jsp" />  
+    </definition> 
+    
+    <definition name="panels-wells" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/panels-wells.jsp" />  
+    </definition> 
+    
+    <definition name="tables" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/tables.jsp" />  
+    </definition> 
+    
+    <definition name="typography" extends="basedefinition">  
+        <put-attribute name="body" value="/WEB-INF/jsp/typography.jsp" />  
     </definition> 
 
 </tiles-definitions>

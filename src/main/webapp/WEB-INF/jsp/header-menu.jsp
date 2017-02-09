@@ -28,7 +28,6 @@
     <!-- Custom Fonts -->
     <link href="<%=request.getContextPath()%>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    
      <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -48,6 +47,22 @@
     <!-- Custom Theme JavaScript -->
     <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
     
+    <!-- Flot Charts JavaScript -->
+    <script src="<%=request.getContextPath()%>/vendor/flot/excanvas.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.time.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="<%=request.getContextPath()%>/data/flot-data.js"></script>
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
+    
+    <!-- DataTables JavaScript -->
+    <script src="<%=request.getContextPath()%>/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/vendor/datatables-responsive/dataTables.responsive.js"></script>
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
