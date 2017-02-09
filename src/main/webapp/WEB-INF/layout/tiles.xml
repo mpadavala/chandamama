@@ -10,9 +10,9 @@
 		
 	</definition>
 	
-	 <definition name="testTemplate" extends="basedefinition">  
-        <put-attribute name="title" value="Test Page" />  
-        <put-attribute name="body" value="/WEB-INF/jsp/body.jsp" />  
+	 <definition name="dashboard" extends="basedefinition">  
+        <put-attribute name="title" value="Dash Board" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />  
     </definition> 
 
 </tiles-definitions>
