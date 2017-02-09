@@ -2,78 +2,77 @@ package com.sample.finance.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ViewController {
 
 	@RequestMapping("/")
 	public String home(){
-        return "testTemplate";
+        return "dashboard";
 	}
 	
 	@RequestMapping("/blank")
-	public ModelAndView blank(){
-        return new ModelAndView("blank");
+	public String blank(){
+        return "blank";
 	}
 	
 	@RequestMapping("/buttons")
-	public ModelAndView buttons(){
-        return new ModelAndView("buttons");
+	public String buttons(){
+        return "buttons";
 	}
 
 	@RequestMapping("/flot")
-	public ModelAndView flot(){
-        return new ModelAndView("flot");
+	public String flot(){
+        return "flot";
 	}
 
 	@RequestMapping("/forms")
-	public ModelAndView forms(){
-        return new ModelAndView("forms");
+	public String forms(){
+        return "forms";
 	}
 
 	@RequestMapping("/grid")
-	public ModelAndView grid(){
-        return new ModelAndView("grid");
+	public String grid(){
+        return "grid";
 	}
 
 	@RequestMapping("/icons")
-	public ModelAndView icons(){
-        return new ModelAndView("icons");
+	public String icons(){
+        return "icons";
 	}
 
 	@RequestMapping("/index")
 	public String index(){
-        return "testTemplate";
+        return "dashboard";
 	}
 
 	@RequestMapping("/login")
-	public ModelAndView login(){
-        return new ModelAndView("login");
+	public String login(){
+        return "login";
 	}
 
 	@RequestMapping("/morris")
-	public ModelAndView morris(){
-        return new ModelAndView("morris");
+	public String morris(){
+        return "morris";
 	}
 
 	@RequestMapping("/notifications")
-	public ModelAndView notifications(){
-        return new ModelAndView("notifications");
+	public String notifications(){
+        return "notifications";
 	}
 
 	@RequestMapping("/panels-wells")
-	public ModelAndView panelswells(){
-        return new ModelAndView("panels-wells");
+	public String panelswells(){
+        return "panels-wells";
 	}
 
 	@RequestMapping("/tables")
-	public ModelAndView tables(){
-        return new ModelAndView("tables");
+	public String tables(){
+        return "tables";
 	}
 
 	@RequestMapping("/typography")
-	public ModelAndView typography(){
-        return new ModelAndView("typography");
+	public String typography(){
+        return "typography";
 	}
 }
