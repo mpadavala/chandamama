@@ -2,5 +2,6 @@
     pageEncoding="UTF-8"%>
     
     
-    
-<H1>This is Header</H1>
+<div align="center">
+&copy; MPG 
+</div>

@@ -1,15 +1,15 @@
 package com.sample.finance.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class ViewController {
 
 	@RequestMapping("/")
-	public ModelAndView home(){
-        return new ModelAndView("dashboard");
+	public String home(){
+        return "testTemplate";
 	}
 	
 	@RequestMapping("/blank")
@@ -43,8 +43,8 @@ public class ViewController {
 	}
 
 	@RequestMapping("/index")
-	public ModelAndView index(){
-        return new ModelAndView("dashboard");
+	public String index(){
+        return "testTemplate";
 	}
 
 	@RequestMapping("/login")
