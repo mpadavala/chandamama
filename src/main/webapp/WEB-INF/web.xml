@@ -14,7 +14,8 @@
 
 	<servlet-mapping>
 		<servlet-name>finance-mvc-dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.htm</url-pattern>
+		<url-pattern>*.json</url-pattern>
 	</servlet-mapping>
  
 </web-app>
