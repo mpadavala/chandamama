@@ -10,10 +10,9 @@
 <body>
 	<table>
 		<tr>
-			<td colspan="2"><tiles:insertAttribute name="header" /></td>
+			<td colspan="2"><tiles:insertAttribute name="header-menu" /></td>
 		</tr>
 		<tr>
-			<td><tiles:insertAttribute name="menu" /></td>
 			<td><tiles:insertAttribute name="body" /></td>
 		</tr>
 		<tr>
