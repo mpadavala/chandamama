@@ -3,59 +3,62 @@
 
 <tiles-definitions>
     
-	<definition name="basedefinition" template="/WEB-INF/jsp/layout.jsp">
+    <definition name="login" template="/WEB-INF/jsp/loginpage-layout.jsp">
+		<put-attribute name="title" value="MPG" /> 
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	
+	<definition name="basepage" template="/WEB-INF/jsp/basepage-layout.jsp">
 		<put-attribute name="title" value="MPG" /> 
 		<put-attribute name="header-menu" value="/WEB-INF/jsp/header-menu.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
 	</definition>
 	
-	 <definition name="dashboard" extends="basedefinition">  
+	 <definition name="dashboard" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />  
     </definition> 
 
- 	<definition name="blank" extends="basedefinition">  
+ 	<definition name="blank" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/blank.jsp" />  
     </definition> 
     
-    <definition name="buttons" extends="basedefinition">  
+    <definition name="buttons" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/buttons.jsp" />  
     </definition> 
     
-    <definition name="flot" extends="basedefinition">  
+    <definition name="flot" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/flot.jsp" />  
     </definition> 
     
-    <definition name="forms" extends="basedefinition">  
+    <definition name="forms" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/forms.jsp" />  
     </definition> 
     
-    <definition name="grid" extends="basedefinition">  
+    <definition name="grid" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/grid.jsp" />  
     </definition> 
     
-    <definition name="icons" extends="basedefinition">  
+    <definition name="icons" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/icons.jsp" />  
     </definition> 
     
-   
-    
-    <definition name="morris" extends="basedefinition">  
+    <definition name="morris" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/morris.jsp" />  
     </definition> 
     
-    <definition name="notifications" extends="basedefinition">  
+    <definition name="notifications" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/notifications.jsp" />  
     </definition> 
     
-    <definition name="panels-wells" extends="basedefinition">  
+    <definition name="panels-wells" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/panels-wells.jsp" />  
     </definition> 
     
-    <definition name="tables" extends="basedefinition">  
+    <definition name="tables" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/tables.jsp" />  
     </definition> 
     
-    <definition name="typography" extends="basedefinition">  
+    <definition name="typography" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/typography.jsp" />  
     </definition> 
 
