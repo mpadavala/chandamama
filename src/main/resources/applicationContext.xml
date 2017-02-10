@@ -12,6 +12,15 @@
 		<property name="password" value="password" />
 	</bean>
  
+ 
+ 	<bean id="stocksService" class="com.sample.finance.service.StocksService">
+		<property name="stocksDataDao" ref="stocksDataDao" />
+		<property name="tickersDao" ref="tickersDao" />
+	</bean>
+	
+	<bean id="tickersService" class="com.sample.finance.service.TickersService">
+		<property name="tickersDao" ref="tickersDao" />
+	</bean>
  	
 	<bean id="tickersDao" class="com.sample.finance.dao.TickersDao">
 		<property name="dataSource" ref="dataSource" />

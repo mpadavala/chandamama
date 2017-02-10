@@ -14,12 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.finance.dao.StocksDataDao;
-import com.sample.finance.dao.TickersDao;
 import com.sample.finance.dto.MarketCap;
 import com.sample.finance.dto.Stock;
-import com.sample.finance.dto.Ticker;
-import com.sample.finance.fileimport.StocksDataLoader;
+import com.sample.finance.service.StocksService;
 import com.sample.finance.util.Constants;
 import com.sample.finance.util.StockUtil;
 
@@ -31,10 +28,7 @@ public class StocksController{
 	private static final int DEFAULT_LIMIT=10;
 	
 	@Autowired
-	private StocksDataDao stocksDataDao;
-	
-	@Autowired
-	private TickersDao tickersDao;
+	private StocksService stocksService;
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
 	public @ResponseBody List<Stock> getMarketGainers(@RequestParam("marketcap") String marketCap, 
@@ -57,7 +51,7 @@ public class StocksController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong + 
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 			
-			return stocksDataDao.getMaketGainers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
+			return stocksService.getMarketGainers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -84,7 +78,7 @@ public class StocksController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong +
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 
-			return stocksDataDao.getMarketLoosers(date, marketCapLong, totalVolumeLong, orderByColumn, sortOrder, limit);
+			return stocksService.getMarketLoosers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -98,7 +92,7 @@ public class StocksController{
 			if(limit == null){
 				limit = DEFAULT_LIMIT;
 			}
-			return stocksDataDao.getMarketCapByDate(limit);
+			return stocksService.getMarketCapByDate(limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -107,16 +101,9 @@ public class StocksController{
 	
 	@RequestMapping(value="/load", method = RequestMethod.GET,  produces="application/json")
 		public void loadStockData() {
-			logger.info("Starting Stock Data Load");
 			try {
-				List<Ticker> tickers = tickersDao.getAllTickers();
-				logger.info("Getting Details from Yahoo!!!");
-				StocksDataLoader stocksDataLoader = new StocksDataLoader();
-				List<Stock> stocksData = stocksDataLoader.getStockData(tickers);
-				logger.info("Getting Details from Yahoo Done. Size : " + stocksData.size());
-				stocksDataDao.insertStockData(stocksData);
+				stocksService.loadStockData();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}	
