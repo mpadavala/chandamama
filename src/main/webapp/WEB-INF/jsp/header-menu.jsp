@@ -14,55 +14,55 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<%=request.getContextPath()%>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap-sb/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap-sb/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<%=request.getContextPath()%>/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap-sb/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<%=request.getContextPath()%>/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/bootstrap-sb/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<%=request.getContextPath()%>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/bootstrap-sb/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
      <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="<%=request.getContextPath()%>/vendor/jquery/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<%=request.getContextPath()%>/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<%=request.getContextPath()%>/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="<%=request.getContextPath()%>/vendor/raphael/raphael.min.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/morrisjs/morris.min.js"></script>
-    <script src="<%=request.getContextPath()%>/data/morris-data.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/raphael/raphael.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/morrisjs/morris.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/dist/js/sb-admin-2.js"></script>
     
     <!-- Flot Charts JavaScript -->
-    <script src="<%=request.getContextPath()%>/vendor/flot/excanvas.min.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.pie.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.resize.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/flot/jquery.flot.time.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-    <script src="<%=request.getContextPath()%>/data/flot-data.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot/excanvas.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot/jquery.flot.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot/jquery.flot.time.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/data/flot-data.js"></script>
     
     <!-- Custom Theme JavaScript -->
-    <script src="<%=request.getContextPath()%>/dist/js/sb-admin-2.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/dist/js/sb-admin-2.js"></script>
     
     <!-- DataTables JavaScript -->
-    <script src="<%=request.getContextPath()%>/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="<%=request.getContextPath()%>/vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/bootstrap-sb/vendor/datatables-responsive/dataTables.responsive.js"></script>
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
