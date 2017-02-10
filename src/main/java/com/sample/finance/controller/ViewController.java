@@ -75,4 +75,9 @@ public class ViewController {
 	public String typography(){
         return "typography";
 	}
+	
+	@RequestMapping("/gainersloosers")
+	public String gainersAndLoosers(){
+        return "gainersloosers";
+	}
 }

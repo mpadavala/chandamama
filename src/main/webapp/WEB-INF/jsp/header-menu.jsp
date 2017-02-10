@@ -299,6 +299,7 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
+            
             <!-- /.navbar-top-links -->
                         <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -316,6 +317,9 @@
                         </li>
                         <li>
                             <a href="index.htm"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                         <li>
+                            <a href="gainersloosers.htm"><i class="fa fa-dashboard fa-bank"></i> Gainers & Loosers</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

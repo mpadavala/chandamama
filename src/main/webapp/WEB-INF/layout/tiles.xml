@@ -17,6 +17,10 @@
 	 <definition name="dashboard" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />  
     </definition> 
+    
+    <definition name="gainersloosers" extends="basepage">  
+        <put-attribute name="body" value="/WEB-INF/jsp/gainers-loosers.jsp" />  
+    </definition>  
 
  	<definition name="blank" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/blank.jsp" />  
@@ -60,6 +64,6 @@
     
     <definition name="typography" extends="basepage">  
         <put-attribute name="body" value="/WEB-INF/jsp/typography.jsp" />  
-    </definition> 
-
+    </definition>
+    
 </tiles-definitions>
