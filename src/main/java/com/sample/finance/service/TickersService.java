@@ -48,7 +48,7 @@ public class TickersService {
 	
 	public void loadTickers() throws Exception{
 		int numberOfLinesToSkip = 1;
-		String baseFolderPath  = "/Users/muralipadavala/dev/fileinterface/tickers";
+		String baseFolderPath  = "/home/murali/dev/repositories/git/finance/src/main/resources/tickers";
 		TickersLoader importTickers = new TickersLoader();
 		importTickers.setTickerDao(tickersDao);
 		importTickers.load(numberOfLinesToSkip, baseFolderPath);
