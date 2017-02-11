@@ -11,15 +11,12 @@ public class StockUtil {
 	private static final String DECIMAL_PATTERN = "#0.##";
 	private static final String DEFAULT_START_DATE = "01/01/1980";
 	
-	private static DateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
-	private static DateFormat timeFormatter = new SimpleDateFormat("MM/dd/yyyyh:mma");
-	
 	public static DateFormat getTimeFormatter() {
-		return timeFormatter;
+		return new SimpleDateFormat("MM/dd/yyyyh:mma");
 	}
 	
 	public static DateFormat getDateFormatter() {
-		return dateFormatter;
+		return new SimpleDateFormat("MM/dd/yyyy");
 	}
 	
 	public static double stringToDouble(String str){
@@ -244,7 +241,7 @@ public class StockUtil {
 					return null;
 				}
 				else{
-					date = timeFormatter.parse(str+time);
+					date = getTimeFormatter().parse(str+time);
 				}
 			}
 		} catch (Exception e) {
