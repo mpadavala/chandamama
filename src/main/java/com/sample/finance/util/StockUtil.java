@@ -12,6 +12,11 @@ public class StockUtil {
 	private static final String DECIMAL_PATTERN = "#0.##";
 	private static final String DEFAULT_START_DATE = "01/01/1980";
 	
+	public static final String DOW30_INDEX = "DOW30";
+	public static final String SANDP500_INDEX = "SANDP500";
+	public static final String USA = "USA";
+	public static final String INDIA = "INDIA";
+	
 	public static String getGoogleBaseUrl() {
 		return GOOGLE_BASE_URL;
 	}

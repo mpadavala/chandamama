@@ -92,8 +92,6 @@ where tradedate='2012-01-13'
 group by symbol
 having count(*) > 1;
 
-// marketcap by day
-SELECT tradedate, count(*), sum(marketcap)/1000000000000 'MarketCap(Trillion)' FROM `finance`.`test_stock_details` group by tradedate order by tradedate desc;
 
 
 

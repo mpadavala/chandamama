@@ -1,4 +1,4 @@
-package com.sample.finance.util;
+package com.sample.finance.parsers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,7 +7,7 @@ import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CompanyDetails {
+public class CompanyDetailsParser {
 
 	/**
 	 * @param args
