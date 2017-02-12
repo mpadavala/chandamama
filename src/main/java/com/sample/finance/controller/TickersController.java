@@ -23,7 +23,7 @@ public class TickersController {
 	@Autowired
 	private TickersService tickersService;
 
-	@RequestMapping(method = RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/all", method = RequestMethod.GET, produces="application/json")
 	public List<Ticker> getTickers(){
 		try {
 			logger.info("In getAllTickers");

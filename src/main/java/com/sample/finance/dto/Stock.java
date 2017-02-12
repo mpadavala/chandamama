@@ -3,10 +3,12 @@ package com.sample.finance.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.sample.finance.util.StockUtil;
+
 public class Stock implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q=";
+	
 
 	private String ticker;
 	private String url;
@@ -33,7 +35,7 @@ public class Stock implements Serializable {
 	}
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
-		this.url= GOOGLE_BASE_URL+ticker;
+		this.url= StockUtil.getGoogleBaseUrl()+ticker;
 	}
 	public String getUrl() {
 		return url;

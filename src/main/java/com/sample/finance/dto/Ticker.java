@@ -2,9 +2,12 @@ package com.sample.finance.dto;
 
 import java.util.Date;
 
+import com.sample.finance.util.StockUtil;
+
 public class Ticker {
 
 	private String ticker;
+	private String url;
 	private String country;
 	private String companyName;
 	private int ipoYear;
@@ -19,6 +22,10 @@ public class Ticker {
 	}
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
+		this.url= StockUtil.getGoogleBaseUrl()+ticker;
+	}
+	public String getUrl() {
+		return url;
 	}
 	public String getCountry() {
 		return country;

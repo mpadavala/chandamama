@@ -8,8 +8,13 @@ import java.util.StringTokenizer;
 
 public class StockUtil {
 	
+	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q=";
 	private static final String DECIMAL_PATTERN = "#0.##";
 	private static final String DEFAULT_START_DATE = "01/01/1980";
+	
+	public static String getGoogleBaseUrl() {
+		return GOOGLE_BASE_URL;
+	}
 	
 	public static DateFormat getTimeFormatter() {
 		return new SimpleDateFormat("MM/dd/yyyyh:mma");
@@ -18,6 +23,7 @@ public class StockUtil {
 	public static DateFormat getDateFormatter() {
 		return new SimpleDateFormat("MM/dd/yyyy");
 	}
+	
 	
 	public static double stringToDouble(String str){
 
