@@ -6,8 +6,10 @@ import java.util.Date;
 public class Stock implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q=";
 
 	private String ticker;
+	private String url;
 	private double lastTrade;
 	private Date tradeDate;
 	private double gainOrLoss;
@@ -31,6 +33,10 @@ public class Stock implements Serializable {
 	}
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
+		this.url= GOOGLE_BASE_URL+ticker;
+	}
+	public String getUrl() {
+		return url;
 	}
 	public double getLastTrade() {
 		return lastTrade;
