@@ -54,6 +54,4 @@ public class TickersService {
 		importTickers.load(numberOfLinesToSkip, baseFolderPath);
 	}
 	
-	
-	
 }

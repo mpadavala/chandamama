@@ -21,12 +21,20 @@
 	<bean id="tickersService" class="com.sample.finance.service.TickersService">
 		<property name="tickersDao" ref="tickersDao" />
 	</bean>
+	
+	<bean id="sandP500Parser" class="com.sample.finance.parsers.SandP500Parser">
+		<property name="stockIndexesDao" ref="stockIndexesDao" />
+	</bean>
  	
 	<bean id="tickersDao" class="com.sample.finance.dao.TickersDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
 	<bean id="stocksDataDao" class="com.sample.finance.dao.StocksDataDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="stockIndexesDao" class="com.sample.finance.dao.StockIndexesDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	

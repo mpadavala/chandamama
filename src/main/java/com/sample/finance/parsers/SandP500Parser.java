@@ -1,8 +1,10 @@
 package com.sample.finance.parsers;
 
-import java.util.List;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
+import com.sample.finance.util.StockUtil;
 
+@Component
 public class SandP500Parser extends WikiParserForTickers{
 
 	private static final String sAndPListUrl = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies";
@@ -14,9 +16,19 @@ public class SandP500Parser extends WikiParserForTickers{
 		return sAndPListUrl;
 	}
 	
-	public static void main(String args[]){
-		List<String> tickers = new SandP500Parser().parse();
+	@Override
+	protected String getIndexName(){
+		return StockUtil.SANDP500_INDEX;
+	}
+	
+	@Override
+	protected String getCountry() {
+		return StockUtil.USA;
 	}
 
+	public String loadSAndPData(){
+		load(parse());
+		return "Done";
+	}
 	
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sample.finance.dto.Sector;
 import com.sample.finance.dto.SubSector;
 import com.sample.finance.dto.Ticker;
+import com.sample.finance.parsers.SandP500Parser;
 import com.sample.finance.service.TickersService;
 
 @RestController
@@ -22,7 +23,10 @@ public class TickersController {
 	
 	@Autowired
 	private TickersService tickersService;
-
+	
+	@Autowired
+	private SandP500Parser sandP500Parser;
+	
 	@RequestMapping(value="/all", method = RequestMethod.GET, produces="application/json")
 	public List<Ticker> getTickers(){
 		try {
@@ -71,7 +75,7 @@ public class TickersController {
 		}
 	}
 	
-	@RequestMapping(value="/load", method = RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/loadtickers", method = RequestMethod.GET, produces="application/json")
 	public void loadTickers(){
 		try {
 			logger.info("In loadTickers");
@@ -82,4 +86,14 @@ public class TickersController {
 		}
 	}
 	
+	@RequestMapping(value="/loadsandp", method = RequestMethod.GET, produces="application/json")
+	public void loadSAndPtickers(){
+		try {
+			logger.info("In load S&P Tickers");
+			sandP500Parser.loadSAndPData();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
