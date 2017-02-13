@@ -8,15 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.sample.finance.dao.StockIndexesDao;
 
-public abstract class WikiParserForTickers {
+@Component
+public class WikiParserForTickers {
 
-	protected abstract String getUrl();
-	protected abstract String getIndexName();
-	protected abstract String getCountry();
-	
 	@Autowired
 	StockIndexesDao stockIndexesDao;
 	
@@ -24,11 +22,11 @@ public abstract class WikiParserForTickers {
 		this.stockIndexesDao = stockIndexesDao;
 	}
 	
-	protected List<String> parse(){
+	public List<String> parse(String urlStr){
 
 		List<String> tickers = new ArrayList<String>();
 		try{
-			URL url = new URL(getUrl());
+			URL url = new URL(urlStr);
 			URLConnection urlConn = url.openConnection();
 			BufferedReader in = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
 			String line;
@@ -46,12 +44,10 @@ public abstract class WikiParserForTickers {
 		return tickers;
 	}
 	
-	protected void load(List<String> tickers){
+	public void load(List<String> tickers, String indexName, String country){
 		
 		if(tickers != null){
-			stockIndexesDao.insert(tickers, getIndexName(), getCountry());
+			stockIndexesDao.insert(tickers, indexName, country);
 		}
-		
-		
 	}
 }

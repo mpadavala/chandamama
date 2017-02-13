@@ -22,7 +22,7 @@
 		<property name="tickersDao" ref="tickersDao" />
 	</bean>
 	
-	<bean id="sandP500Parser" class="com.sample.finance.parsers.SandP500Parser">
+	<bean id="wikiParserForTickers" class="com.sample.finance.parsers.WikiParserForTickers">
 		<property name="stockIndexesDao" ref="stockIndexesDao" />
 	</bean>
  	
