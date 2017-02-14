@@ -20,7 +20,7 @@ public class TickersDao extends BaseDao{
 	private static final Logger logger = Logger.getLogger(TickersDao.class.getName());
 	
 	//private static final String GET_ETF_TICKERS = "SELECT TICKER FROM ETF_TICKERS";
-	private static final String INSERT_TICKER = "INSERT INTO TICKERS (TICKER, COUNTRY, NAME, IPOYEAR, SECTOR, INDUSTRY, SUMMARYURL, CREATIONDATE, MODIFIEDDATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private static final String INSERT_TICKER = "INSERT INTO TICKERS (TICKER, EXCHANGE, COUNTRY, NAME, IPOYEAR, SECTOR, INDUSTRY, SUMMARYURL, CREATIONDATE, MODIFIEDDATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE_TICKER = "UPDATE TICKERS SET NAME=?, IPOYEAR=? , SECTOR=?, INDUSTRY=?, MODIFIEDDATE=? WHERE TICKER = ?";
 	private static final String GET_ALL_TICKERS = "SELECT * FROM TICKERS";
 	private static final String GET_TICKER_BY_ID = "SELECT * FROM TICKERS WHERE TICKER=?";
@@ -79,6 +79,7 @@ public class TickersDao extends BaseDao{
 			try{
 				getJdbcTemplate().update(INSERT_TICKER, new Object[]{
 					ticker.getTicker(), 
+					ticker.getExchange(),
 					ticker.getCountry(),
 					ticker.getCompanyName(),
 					ticker.getIpoYear(),

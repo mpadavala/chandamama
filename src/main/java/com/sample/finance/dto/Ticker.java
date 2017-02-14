@@ -7,6 +7,7 @@ import com.sample.finance.util.StockUtil;
 public class Ticker {
 
 	private String ticker;
+	private String exchange;
 	private String url;
 	private String country;
 	private String companyName;
@@ -23,6 +24,12 @@ public class Ticker {
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 		this.url= StockUtil.getGoogleBaseUrl()+ticker;
+	}
+	public String getExchange() {
+		return exchange;
+	}
+	public void setExchange(String exchange) {
+		this.exchange = exchange;
 	}
 	public String getUrl() {
 		return url;

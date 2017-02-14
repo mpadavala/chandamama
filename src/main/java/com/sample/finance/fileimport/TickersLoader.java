@@ -55,6 +55,10 @@ public class TickersLoader {
 					List<Ticker> tickers = new ArrayList<Ticker>();
 					if(file.toString().endsWith(CSV_FILE_SUFFX)){
 						InputStream instream = new FileInputStream(file);
+						logger.info("file name : " + file.getName());
+						String fileName = file.getName();
+						String exchange = fileName.substring(0,fileName.indexOf("_"));
+						
 						InputStreamReader reader=new InputStreamReader(instream,Charset.forName("UTF-8"));
 						CSVParser parser=new CSVParser(reader,CSVFormat.DEFAULT);
 						List<CSVRecord> csvRecords = parser.getRecords();
@@ -64,20 +68,17 @@ public class TickersLoader {
 									continue;
 								}
 								String tickerSymbol = record.get(0).trim();
-								
-								
 								if(tickerSymbol.contains("^")){
 									continue;
 								}
 								if(tickerSymbol.contains("/")){
 									tickerSymbol = tickerSymbol.replace("/", "-");
 								}
-								
 								Ticker ticker = new Ticker();
 								ticker.setTicker(tickerSymbol);
+								ticker.setExchange(exchange);
 								ticker.setCountry(COUNTRY_USA);
 								ticker.setCompanyName(record.get(1));
-								
 								ticker.setIpoYear(getIpoYear(record.get(4)));
 								ticker.setSector(record.get(5));
 								ticker.setIndustry(record.get(6));
@@ -94,8 +95,6 @@ public class TickersLoader {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 	

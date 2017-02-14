@@ -11,6 +11,7 @@ public class Stock implements Serializable {
 	
 
 	private String ticker;
+	private String exchange;
 	private String url;
 	private double lastTrade;
 	private Date tradeDate;
@@ -36,6 +37,13 @@ public class Stock implements Serializable {
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 		this.url= StockUtil.getGoogleBaseUrl()+ticker;
+	}
+	
+	public String getExchange() {
+		return exchange;
+	}
+	public void setExchange(String exchange) {
+		this.exchange = exchange;
 	}
 	public String getUrl() {
 		return url;

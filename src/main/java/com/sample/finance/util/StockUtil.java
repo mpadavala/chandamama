@@ -8,7 +8,9 @@ import java.util.StringTokenizer;
 
 public class StockUtil {
 	
-	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q=";
+	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q={0}%3A";
+	//https://www.google.com/finance?q=NYSE%3ACC
+		
 	private static final String DECIMAL_PATTERN = "#0.##";
 	private static final String DEFAULT_START_DATE = "01/01/1980";
 	
