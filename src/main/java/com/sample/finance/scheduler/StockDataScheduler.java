@@ -1,5 +1,6 @@
 package com.sample.finance.scheduler;
 
+import java.net.InetAddress;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -31,6 +32,10 @@ public class StockDataScheduler {
 		
 		try {
 			logger.info("Loading Stock Data : " + StockUtil.getTimeFormatter().format(new Date()));
+			if(InetAddress.getLocalHost().toString().contains("MacBook-Pro.local")){
+				logger.info("Exiting.... ");
+				return;
+			}
 			stocksService.loadStockData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
