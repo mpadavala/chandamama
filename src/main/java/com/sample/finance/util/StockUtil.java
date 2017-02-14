@@ -8,7 +8,8 @@ import java.util.StringTokenizer;
 
 public class StockUtil {
 	
-	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q={0}%3A";
+	private static final String GOOGLE_BASE_URL = "https://www.google.com/finance?q=";
+	public static final String COLON = "%3A";
 	//https://www.google.com/finance?q=NYSE%3ACC
 		
 	private static final String DECIMAL_PATTERN = "#0.##";

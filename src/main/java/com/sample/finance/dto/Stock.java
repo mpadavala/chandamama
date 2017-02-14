@@ -8,7 +8,6 @@ import com.sample.finance.util.StockUtil;
 public class Stock implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 
 	private String ticker;
 	private String exchange;
@@ -30,13 +29,11 @@ public class Stock implements Serializable {
 	private String companyName;
 	private Date creationDate;
 	
-	
 	public String getTicker() {
 		return ticker;
 	}
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
-		this.url= StockUtil.getGoogleBaseUrl()+ticker;
 	}
 	
 	public String getExchange() {
@@ -46,6 +43,7 @@ public class Stock implements Serializable {
 		this.exchange = exchange;
 	}
 	public String getUrl() {
+		this.url= StockUtil.getGoogleBaseUrl()+exchange+StockUtil.COLON+ticker;
 		return url;
 	}
 	public double getLastTrade() {
