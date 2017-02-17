@@ -16,6 +16,9 @@ TRUNCATE table1;
 SET FOREIGN_KEY_CHECKS = 1;
 
 
+https://www.nseindia.com/gsa/NSE_Search.jsp?q=ticker%20symbol&collection=WSALL_col&frontend=UAT_WSALL_fe&collection_print=ALL
+https://www.nseindia.com/products/content/equities/equities/eq_security.htm
+
 ------
 
 -- Gains from Certain Date 
