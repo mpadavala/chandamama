@@ -9,6 +9,29 @@ http://localhost:9000/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&
 bootstrap-theme
 https://github.com/BlackrockDigital/startbootstrap-sb-admin-2
 
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/marketcap.json
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/loosers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/all.json
+
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/AAPL.json
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/sectors.json
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/subsectors.json
+
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance
+
+
+another store app, that i got online and deployed it here..
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/store
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/store/products
+
+
 
 -- to truncate data from a table which has foreign key constraints
 SET FOREIGN_KEY_CHECKS = 0; 
