@@ -4,15 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import org.springframework.jdbc.core.RowMapper;
@@ -36,8 +30,7 @@ public class StocksDataDao extends BaseDao{
 	private static String MARKET_LOOSERS = "SELECT S.TICKER, T.EXCHANGE, S.LASTTRADE, S.TRADEDATE, S.GAINORLOSS, S.OPENEDAT, S.DAYSHIGH, S.DAYSLOW, S.TOTALVOLUME, "
 			+ "S.MARKETCAP, S.PREVIOUSCLOSE, S.PERCENTGAINORLOSS, S.FIFTYTWOWEEKLOW, S.FIFTYTWOWEEKHIGH, S.EPS, S.PE, S.COMPANYNAME, S.CREATIONDATE "
 			+ "FROM STOCK_DATA S, TICKERS T WHERE T.TICKER=S.TICKER AND DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS < 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?";
-	private static String MAKETCAP_BY_DATE = "SELECT TRADEDATE, SUM(MARKETCAP) FROM STOCK_DATA GROUP BY TRADEDATE ORDER BY TRADEDATE DESC LIMIT ?";
-	private static String NUMBER_OF_STOCKS_BY_DATE = "SELECT COUNT(1) FROM STOCK_DATA GROUP BY TRADEDATE HAVING DATE_FORMAT(TRADEDATE, '%m-%d-%Y') = ?";
+	private static String MAKETCAP_BY_DATE = "SELECT TRADEDATE, SUM(MARKETCAP), COUNT(*) FROM STOCK_DATA GROUP BY TRADEDATE ORDER BY TRADEDATE DESC LIMIT ?";
 	
 	private static final String TICKER = "TICKER";
 	private static final String LASTTRADE = "LASTTRADE";
@@ -75,38 +68,20 @@ public class StocksDataDao extends BaseDao{
 	
 	public List<MarketCap> getMarketCapByDate(int howmany)throws Exception{
 		
-		List<Map<Date, Double>> resultSet = getJdbcTemplate().query(MAKETCAP_BY_DATE, new Object[]{howmany}, new RowMapper<Map<Date, Double>>(){
+		List<MarketCap> resultSet = getJdbcTemplate().query(MAKETCAP_BY_DATE, new Object[]{howmany}, new RowMapper<MarketCap>(){
 
-			public Map<Date, Double> mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Map<Date, Double> map = new HashMap<Date, Double>();
-				map.put(rs.getDate(1), rs.getDouble(2));
-				return map;
+			public MarketCap mapRow(ResultSet rs, int rowNum) throws SQLException {
+				MarketCap marketCap = new MarketCap();
+				marketCap.setDate(rs.getDate(1));
+				marketCap.setTotalMarketCap(rs.getDouble(2));
+				marketCap.setNumberOfStocksConsidered(rs.getInt(3));
+				marketCap.setTotalMarketCapHumanReadable(StockUtil.MarketCapHumanReadable(marketCap.getTotalMarketCap()));
+				marketCap.setDayOftheWeek(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(marketCap.getDate().getTime()));
+				return marketCap;
 			}
 		});
 		
-		Map<Date, Double> result = new TreeMap<Date, Double>(Collections.reverseOrder());
-		for(Map<Date, Double> temp : resultSet){
-			for (Map.Entry<Date, Double> entry : temp.entrySet()){
-				result.put(entry.getKey(), entry.getValue());
-			}
-		}
-		
-		List<MarketCap> marketCapList = new ArrayList<MarketCap>();
-		for(Map.Entry<Date, Double> entry : result.entrySet()){
-			MarketCap marketCap = new MarketCap();
-			marketCap.setDate(entry.getKey());
-			Double totalMarketCap = entry.getValue();
-			marketCap.setTotalMarketCap(totalMarketCap);
-			marketCap.setTotalMarketCapHumanReadable(StockUtil.MarketCapHumanReadable(totalMarketCap));
-			
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(entry.getKey());
-			marketCap.setDayOftheWeek(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(marketCap.getDate().getTime()));
-			int numberOfStocksConsidered =  getJdbcTemplate().queryForInt(NUMBER_OF_STOCKS_BY_DATE, new Object[]{new SimpleDateFormat(Constants.DATE_FORMAT_DEFAULT).format(marketCap.getDate())});
-			marketCap.setNumberOfStocksConsidered(numberOfStocksConsidered);
-			marketCapList.add(marketCap);
-		}
-		return marketCapList;
+		return resultSet;
 	}
 	
 	private class StockDataRowMapper implements RowMapper<Stock>{
