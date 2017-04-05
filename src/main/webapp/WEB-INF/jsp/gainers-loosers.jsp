@@ -85,7 +85,6 @@
                 { "data": "marketCap" },
                 { "data": "pe" },
                 { "data": "eps" }
-               
             ]
         } );
     } );
