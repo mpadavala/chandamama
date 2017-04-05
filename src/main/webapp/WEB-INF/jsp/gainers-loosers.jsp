@@ -19,129 +19,41 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Ticker</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Percent Gain</th>
-                                        <th>Total Volume</th>
-                                        <th>MarketCap</th>
-                                        <th>EPS</th>
-                                        <th>PE</th>
-                                        <th>52 Week Low</th>
-                                        <th>52 Week High</th>
-                                        <th>Trade Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.1</td>
-                                        <td>KDE 3.1</td>
-                                        <td class="center">3.1</td>
-                                        <td class="center">C</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 4.5</td>
-                                        <td>Mac OS 8-9</td>
-                                        <td class="center">-</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Trident</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                           
+                           
+                           
+                           <table id="example" class="table table-striped table-bordered table-hover" " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                 <th>Name</th>
+                  <th>Last Trade</th>
+                   <th>Gain or Loss</th>
+                    <th>Market Cap</th>
+                     <th>PE</th>
+                      <th>EPS</th>
+               
+               
+               
+               
+            </tr>
+        </thead>
+        <tfoot>
+       <tr>
+			<th>Ticker</th>
+            <th>Name</th>
+             <th>Last Trade</th>
+              <th>Gain or Loss</th>
+               <th>Market Cap</th>
+                <th>PE</th>
+                 <th>EPS</th>
+	              
+                              
+            </tr>
+        </tfoot>
+    </table>
+    
+    
                             <!-- /.table-responsive -->
                             
                             
@@ -158,11 +70,27 @@
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
+    
+    
+    
+    
     $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
+        $('#example').DataTable( {
+            "ajax": "http://localhost:9000/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss",
+            "columns": [
+                { "data": "ticker" },
+                { "data": "companyName" },
+                { "data": "lastTrade" },
+                { "data": "gainOrLoss" },
+                { "data": "marketCap" },
+                { "data": "pe" },
+                { "data": "eps" }
+               
+            ]
+        } );
+    } );
+    
+    
     </script>
 
 </body>

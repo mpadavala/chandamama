@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sample.finance.dto.Data;
 import com.sample.finance.dto.MarketCap;
 import com.sample.finance.dto.Stock;
 import com.sample.finance.service.StocksService;
@@ -31,7 +32,7 @@ public class StocksController{
 	private StocksService stocksService;
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
-	public @ResponseBody List<Stock> getMarketGainers(@RequestParam("marketcap") String marketCap, 
+	public @ResponseBody Data getMarketGainers(@RequestParam("marketcap") String marketCap, 
 			@RequestParam("totalvolume") String totalVolume,
 			@RequestParam("orderby") String orderByColumn,
 			@RequestParam(value="date", required = false)  @DateTimeFormat(pattern=Constants.DATE_FORMAT_DEFAULT) Date date,
@@ -51,7 +52,8 @@ public class StocksController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong + 
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 			
-			return stocksService.getMarketGainers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
+			List<Stock> list = stocksService.getMarketGainers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
+			return new Data(list);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
