@@ -29,7 +29,7 @@ public class TickerDataController{
 	private static final int DEFAULT_LIMIT=10;
 	
 	@Autowired
-	private TickerDataService stocksService;
+	private TickerDataService tickerDataService;
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
 	public @ResponseBody Data getMarketGainers(@RequestParam("marketcap") String marketCap, 
@@ -52,7 +52,7 @@ public class TickerDataController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong + 
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 			
-			List<Stock> list = stocksService.getMarketGainers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
+			List<Stock> list = tickerDataService.getMarketGainers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
 			return new Data(list);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class TickerDataController{
 			logger.info("date : " + date +"; marketCap : " + marketCapLong + "(" + marketCap + "); totalVolume : " + totalVolumeLong +
 					"(" + totalVolume + "); orderBy : " + orderByColumn + "; sortorder : " + sortOrder + "; limit : " + limit);
 
-			return stocksService.getMarketLoosers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
+			return tickerDataService.getMarketLoosers(marketCapLong, totalVolumeLong, orderByColumn, sortOrder, date, limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -94,7 +94,7 @@ public class TickerDataController{
 			if(limit == null){
 				limit = DEFAULT_LIMIT;
 			}
-			return stocksService.getMarketCapByDate(limit);
+			return tickerDataService.getMarketCapByDate(limit);
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
@@ -104,7 +104,7 @@ public class TickerDataController{
 	@RequestMapping(value="/load", method = RequestMethod.GET,  produces="application/json")
 		public void loadStockData() {
 			try {
-				stocksService.loadStockData();
+				tickerDataService.loadStockData();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

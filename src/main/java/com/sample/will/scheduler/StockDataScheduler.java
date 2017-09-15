@@ -19,12 +19,12 @@ public class StockDataScheduler {
 	private static final Logger logger = Logger.getLogger(StockDataScheduler.class.getName());
 	
 	@Autowired
-	private TickerDataService stocksService;
+	private TickerDataService tickerDataService;
 	
 	//@Scheduled(cron = "	0 0/1 * 1/1 * *")
 	public void cronTask() {
 		logger.info("Sample Cron Task : " + StockUtil.getTimeFormatter().format(new Date()));
-		stocksService.testService();
+		tickerDataService.testService();
 	}
 	
 	@Scheduled(cron = "0 0 14 * * MON-FRI")
@@ -36,7 +36,7 @@ public class StockDataScheduler {
 				logger.info("Exiting.... ");
 				return;
 			}
-			stocksService.loadStockData();
+			tickerDataService.loadStockData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
