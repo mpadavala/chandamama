@@ -57,7 +57,7 @@ public class TickersLoader {
 						InputStream instream = new FileInputStream(file);
 						logger.info("file name : " + file.getName());
 						String fileName = file.getName();
-					//	String exchange = fileName.substring(0,fileName.indexOf("_"));
+						String exchange = fileName.substring(0,fileName.indexOf("_"));
 						
 						InputStreamReader reader=new InputStreamReader(instream,Charset.forName("UTF-8"));
 						CSVParser parser=new CSVParser(reader,CSVFormat.DEFAULT);
@@ -76,7 +76,7 @@ public class TickersLoader {
 								}
 								Ticker ticker = new Ticker();
 								ticker.setTicker(tickerSymbol);
-								//ticker.setExchange(exchange);
+								ticker.setExchange(exchange);
 								ticker.setCountry(COUNTRY_USA);
 								ticker.setCompanyName(record.get(1));
 								ticker.setIpoYear(getIpoYear(record.get(4)));
