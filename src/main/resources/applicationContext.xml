@@ -7,38 +7,38 @@
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/finance" />
+		<property name="url" value="jdbc:mysql://localhost:3306/will" />
 		<property name="username" value="root" />
 		<property name="password" value="password" />
 	</bean>
  
  
- 	<bean id="stocksService" class="com.sample.finance.service.StocksService">
+ 	<bean id="stocksService" class="com.sample.will.service.StocksService">
 		<property name="stocksDataDao" ref="stocksDataDao" />
 		<property name="tickersDao" ref="tickersDao" />
 	</bean>
 	
-	<bean id="tickersService" class="com.sample.finance.service.TickersService">
+	<bean id="tickersService" class="com.sample.will.service.TickersService">
 		<property name="tickersDao" ref="tickersDao" />
 	</bean>
 	
-	<bean id="wikiParserForTickers" class="com.sample.finance.parsers.WikiParserForTickers">
+	<bean id="wikiParserForTickers" class="com.sample.will.parsers.WikiParserForTickers">
 		<property name="stockIndexesDao" ref="stockIndexesDao" />
 	</bean>
  	
-	<bean id="tickersDao" class="com.sample.finance.dao.TickersDao">
+	<bean id="tickersDao" class="com.sample.will.dao.TickersDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="stocksDataDao" class="com.sample.finance.dao.StocksDataDao">
+	<bean id="stocksDataDao" class="com.sample.will.dao.StocksDataDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="stockIndexesDao" class="com.sample.finance.dao.StockIndexesDao">
+	<bean id="stockIndexesDao" class="com.sample.will.dao.StockIndexesDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="watchListDao" class="com.sample.finance.dao.WatchListDao">
+	<bean id="watchListDao" class="com.sample.will.dao.WatchListDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	

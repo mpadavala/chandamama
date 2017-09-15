@@ -1,4 +1,4 @@
-package com.sample.finance;
+package com.sample.will;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

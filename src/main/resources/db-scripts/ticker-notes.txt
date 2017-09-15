@@ -4,27 +4,27 @@ d3-graphs
 https://github.com/mbostock/d3/wiki/Gallery
 
 gainers:
-http://localhost:9000/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss
+http://localhost:9000/will/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss
 
 bootstrap-theme
 https://github.com/BlackrockDigital/startbootstrap-sb-admin-2
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/marketcap.json
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/stocks/marketcap.json
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/stocks/loosers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/stocks/loosers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss&date=03-24-2017
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/all.json
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/tickers/all.json
 
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/AAPL.json
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/tickers/AAPL.json
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/sectors.json
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/tickers/sectors.json
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance/tickers/subsectors.json
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will/tickers/subsectors.json
 
-http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/finance
+http://ec2-54-190-4-31.us-west-2.compute.amazonaws.com:8080/will
 
 
 another store app, that i got online and deployed it here..

@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sample</groupId>
-	<artifactId>finance</artifactId>
+	<artifactId>will</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Finance Application</name>
+	<name>Will Application</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -228,7 +228,7 @@
 	</repositories>
 
 	<build>
-		<finalName>finance</finalName>
+		<finalName>will</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>

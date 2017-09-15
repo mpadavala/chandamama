@@ -76,7 +76,7 @@
     
     $(document).ready(function() {
         $('#example').DataTable( {
-            "ajax": "http://localhost:9000/finance/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss",
+            "ajax": "http://localhost:9000/will/stocks/gainers.json?marketcap=1B&totalvolume=100K&orderby=percentgainorloss",
             "columns": [
                 { "data": "ticker" },
                 { "data": "companyName" },
