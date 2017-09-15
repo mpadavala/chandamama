@@ -14,9 +14,9 @@ import com.sample.will.util.StockUtil;
 
 @Service
 @EnableScheduling
-public class StockDataScheduler {
+public class TickerDataScheduler {
 
-	private static final Logger logger = Logger.getLogger(StockDataScheduler.class.getName());
+	private static final Logger logger = Logger.getLogger(TickerDataScheduler.class.getName());
 	
 	@Autowired
 	private TickerDataService tickerDataService;

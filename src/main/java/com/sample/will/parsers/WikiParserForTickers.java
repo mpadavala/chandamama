@@ -16,10 +16,10 @@ import com.sample.will.dao.IndexDataDao;
 public class WikiParserForTickers {
 
 	@Autowired
-	IndexDataDao stockIndexesDao;
+	IndexDataDao indexDataDao;
 	
-	public void setStockIndexesDao(IndexDataDao stockIndexesDao) {
-		this.stockIndexesDao = stockIndexesDao;
+	public void setIndexDataDao(IndexDataDao indexDataDao) {
+		this.indexDataDao = indexDataDao;
 	}
 	
 	public List<String> parse(String urlStr){
@@ -47,7 +47,7 @@ public class WikiParserForTickers {
 	public void load(List<String> tickers, String indexName, String country){
 		
 		if(tickers != null){
-			stockIndexesDao.insert(tickers, indexName, country);
+			indexDataDao.insert(tickers, indexName, country);
 		}
 	}
 }

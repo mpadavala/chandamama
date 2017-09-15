@@ -60,8 +60,8 @@ public class TickersService {
 	public void loadTickers() throws Exception{
 		int numberOfLinesToSkip = 1;
 		
-		//String baseFolderPath  = "/home/murali/dev/repositories/git/finance/src/main/resources/tickers";
-		String baseFolderPath = "/home/ec2-user/repositories/finance/src/main/resources/tickers";
+		String baseFolderPath  = "/Users/mpadavala/dev/repositories/bit/will/src/main/resources/tickers";
+		//String baseFolderPath = "/home/ec2-user/repositories/finance/src/main/resources/tickers";
 		
 		TickersLoader importTickers = new TickersLoader();
 		importTickers.setTickerDao(tickersDao);

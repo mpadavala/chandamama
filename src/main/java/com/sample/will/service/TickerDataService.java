@@ -24,8 +24,8 @@ public class TickerDataService {
 	@Autowired
 	private TickersDao tickersDao;
 
-	public void setStocksDataDao(TickerDataDao stocksDataDao) {
-		this.tickerDataDao = stocksDataDao;
+	public void setTickerDataDao(TickerDataDao tickerDataDao) {
+		this.tickerDataDao = tickerDataDao;
 	}
 
 	public void setTickersDao(TickersDao tickersDao) {
