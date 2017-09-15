@@ -19,18 +19,18 @@ import com.sample.will.util.Constants;
 import com.sample.will.util.StockUtil;
 
 @Component
-public class StocksDataDao extends BaseDao{
+public class TickerDataDao extends BaseDao{
 
-	private static final Logger logger = Logger.getLogger(StocksDataDao.class.getName());
+	private static final Logger logger = Logger.getLogger(TickerDataDao.class.getName());
 	
-	private static String INSERT_STOCK_DATA = "INSERT INTO STOCK_DATA VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static String INSERT_TICKER_DATA = "INSERT INTO TICKER_DATA VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static String MARKET_GAINERS = "SELECT S.TICKER, T.EXCHANGE, S.LASTTRADE, S.TRADEDATE, S.GAINORLOSS, S.OPENEDAT, S.DAYSHIGH, S.DAYSLOW, S.TOTALVOLUME, "
 			+ "S.MARKETCAP, S.PREVIOUSCLOSE, S.PERCENTGAINORLOSS, S.FIFTYTWOWEEKLOW, S.FIFTYTWOWEEKHIGH, S.EPS, S.PE, S.COMPANYNAME, S.CREATIONDATE "
-			+ "FROM STOCK_DATA S, TICKERS T WHERE T.TICKER=S.TICKER AND DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS > 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?;";	
+			+ "FROM TICKER_DATA S, TICKERS T WHERE T.TICKER=S.TICKER AND DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS > 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?;";	
 	private static String MARKET_LOOSERS = "SELECT S.TICKER, T.EXCHANGE, S.LASTTRADE, S.TRADEDATE, S.GAINORLOSS, S.OPENEDAT, S.DAYSHIGH, S.DAYSLOW, S.TOTALVOLUME, "
 			+ "S.MARKETCAP, S.PREVIOUSCLOSE, S.PERCENTGAINORLOSS, S.FIFTYTWOWEEKLOW, S.FIFTYTWOWEEKHIGH, S.EPS, S.PE, S.COMPANYNAME, S.CREATIONDATE "
-			+ "FROM STOCK_DATA S, TICKERS T WHERE T.TICKER=S.TICKER AND DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS < 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?";
-	private static String MAKETCAP_BY_DATE = "SELECT TRADEDATE, SUM(MARKETCAP), COUNT(*) FROM STOCK_DATA GROUP BY TRADEDATE ORDER BY TRADEDATE DESC LIMIT ?";
+			+ "FROM TICKER_DATA S, TICKERS T WHERE T.TICKER=S.TICKER AND DATE_FORMAT(TRADEDATE, ''%m-%d-%Y'') = ? AND GAINORLOSS < 0 AND MARKETCAP > ? AND TOTALVOLUME > ? ORDER BY {0} {1} LIMIT ?";
+	private static String MAKETCAP_BY_DATE = "SELECT TRADEDATE, SUM(MARKETCAP), COUNT(*) FROM TICKER_DATA GROUP BY TRADEDATE ORDER BY TRADEDATE DESC LIMIT ?";
 	
 	private static final String TICKER = "TICKER";
 	private static final String LASTTRADE = "LASTTRADE";
@@ -126,7 +126,7 @@ public class StocksDataDao extends BaseDao{
 		
 		for(Stock stock : stocks){
 			try{
-				getJdbcTemplate().update(INSERT_STOCK_DATA, new Object[]{
+				getJdbcTemplate().update(INSERT_TICKER_DATA, new Object[]{
 						stock.getTicker(),
 						stock.getLastTrade(),
 						stock.getTradeDate(),

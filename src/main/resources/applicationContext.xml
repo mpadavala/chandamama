@@ -12,9 +12,8 @@
 		<property name="password" value="password" />
 	</bean>
  
- 
- 	<bean id="stocksService" class="com.sample.will.service.StocksService">
-		<property name="stocksDataDao" ref="stocksDataDao" />
+ 	<bean id="tickerDataService" class="com.sample.will.service.TickerDataService">
+		<property name="tickerDataDao" ref="tickerDataDao" />
 		<property name="tickersDao" ref="tickersDao" />
 	</bean>
 	
@@ -23,18 +22,18 @@
 	</bean>
 	
 	<bean id="wikiParserForTickers" class="com.sample.will.parsers.WikiParserForTickers">
-		<property name="stockIndexesDao" ref="stockIndexesDao" />
+		<property name="indexDataDao" ref="indexDataDao" />
 	</bean>
  	
 	<bean id="tickersDao" class="com.sample.will.dao.TickersDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="stocksDataDao" class="com.sample.will.dao.StocksDataDao">
+	<bean id="tickerDataDao" class="com.sample.will.dao.TickerDataDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="stockIndexesDao" class="com.sample.will.dao.StockIndexesDao">
+	<bean id="indexDataDao" class="com.sample.will.dao.IndexDataDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	

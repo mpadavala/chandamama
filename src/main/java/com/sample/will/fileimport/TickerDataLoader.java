@@ -18,9 +18,9 @@ import com.sample.will.dto.Stock;
 import com.sample.will.dto.Ticker;
 import com.sample.will.util.StockUtil;
 
-public class StocksDataLoader {
+public class TickerDataLoader {
 
-	private static Logger logger = Logger.getLogger(StocksDataLoader.class.getName());
+	private static Logger logger = Logger.getLogger(TickerDataLoader.class.getName());
 	
 	private static final String BASE_URL = "http://quote.yahoo.com/d/quotes.csv?s=";
 	private static final String END_URL = "&d=t&f=sl1d1c1ohgvj1pp2wern";

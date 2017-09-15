@@ -17,19 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sample.will.dto.Data;
 import com.sample.will.dto.MarketCap;
 import com.sample.will.dto.Stock;
-import com.sample.will.service.StocksService;
+import com.sample.will.service.TickerDataService;
 import com.sample.will.util.Constants;
 import com.sample.will.util.StockUtil;
 
 @RestController
 @RequestMapping("stocks")
-public class StocksController{
+public class TickerDataController{
 	
-	private static final Logger logger = Logger.getLogger(StocksController.class.getName());
+	private static final Logger logger = Logger.getLogger(TickerDataController.class.getName());
 	private static final int DEFAULT_LIMIT=10;
 	
 	@Autowired
-	private StocksService stocksService;
+	private TickerDataService stocksService;
 
 	@RequestMapping(value="/gainers", method = RequestMethod.GET,  produces="application/json")
 	public @ResponseBody Data getMarketGainers(@RequestParam("marketcap") String marketCap, 

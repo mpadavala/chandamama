@@ -10,15 +10,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sample.will.dao.StockIndexesDao;
+import com.sample.will.dao.IndexDataDao;
 
 @Component
 public class WikiParserForTickers {
 
 	@Autowired
-	StockIndexesDao stockIndexesDao;
+	IndexDataDao stockIndexesDao;
 	
-	public void setStockIndexesDao(StockIndexesDao stockIndexesDao) {
+	public void setStockIndexesDao(IndexDataDao stockIndexesDao) {
 		this.stockIndexesDao = stockIndexesDao;
 	}
 	

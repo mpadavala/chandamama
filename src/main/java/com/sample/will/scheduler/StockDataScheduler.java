@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.sample.will.service.StocksService;
+import com.sample.will.service.TickerDataService;
 import com.sample.will.util.StockUtil;
 
 @Service
@@ -19,7 +19,7 @@ public class StockDataScheduler {
 	private static final Logger logger = Logger.getLogger(StockDataScheduler.class.getName());
 	
 	@Autowired
-	private StocksService stocksService;
+	private TickerDataService stocksService;
 	
 	//@Scheduled(cron = "	0 0/1 * 1/1 * *")
 	public void cronTask() {
