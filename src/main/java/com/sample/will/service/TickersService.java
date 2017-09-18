@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.sample.will.dao.PropertiesDao;
 import com.sample.will.dao.TickersDao;
 import com.sample.will.dto.Sector;
 import com.sample.will.dto.SubSector;
@@ -26,12 +27,19 @@ public class TickersService {
 	private TickersDao tickersDao;
 	
 	@Autowired
+	private PropertiesDao propertiesDao;
+	
+	@Autowired
 	private WikiParserForTickers wikiParserForTickers;
 	
 	public void setTickersDao(TickersDao tickersDao) {
 		this.tickersDao = tickersDao;
 	}
 
+	public void setPropertiesDao(PropertiesDao propertiesDao) {
+		this.propertiesDao = propertiesDao;
+	}
+	
 	public void setWikiParserForTickers(WikiParserForTickers wikiParserForTickers) {
 		this.wikiParserForTickers = wikiParserForTickers;
 	}
@@ -58,11 +66,9 @@ public class TickersService {
 	}
 	
 	public void loadTickers() throws Exception{
+		
 		int numberOfLinesToSkip = 1;
-		
-		String baseFolderPath  = "/Users/mpadavala/dev/repositories/bit/will/src/main/resources/tickers";
-		//String baseFolderPath = "/home/ec2-user/repositories/finance/src/main/resources/tickers";
-		
+		String baseFolderPath  = propertiesDao.get("IMPORT_BASE_PATH");
 		TickersLoader importTickers = new TickersLoader();
 		importTickers.setTickerDao(tickersDao);
 		importTickers.load(numberOfLinesToSkip, baseFolderPath);

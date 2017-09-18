@@ -37,6 +37,10 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<bean id="propertiesDao" class="com.sample.will.dao.PropertiesDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
 	<bean id="watchListDao" class="com.sample.will.dao.WatchListDao">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
