@@ -1,8 +1,8 @@
 -- number of stocks  by exchange
-select exchange, count(*) count from tickers group by exchange order by count desc;
+select exchange, count(*) count, count(*)*100/(select count(*) from tickers) percentage from tickers group by exchange order by count desc;
 
 -- number of stocks in each sector
-select distinct sector, count(*) count from tickers group by sector order by count desc;
+select distinct sector, count(*) count, count(*)*100/(select count(*) from tickers) percentage from tickers group by sector order by count desc;
 
 -- number of stocks by sector and industry combination
 select distinct sector, industry,  count(*) count from tickers group by sector,industry order by sector, industry, count desc;
