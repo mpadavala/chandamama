@@ -4,6 +4,7 @@ NASDAQ_companylist.csv --- http://www.nasdaq.com/screening/companies-by-name.asp
 NYSE_companylist.csv --- http://www.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=nyse&render=download
 AMEX_companylist.csv --- http://www.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=amex&render=download
 
+for India tickers ---http://www.marketonmobile.com/search.php
 
 
 d3-graphs
